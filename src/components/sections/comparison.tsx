@@ -1,14 +1,14 @@
-import { COMPARISON_ROWS } from "@/lib/constants";
+import type { ComparisonContent } from "@/lib/content/types";
 
-export function Comparison() {
+export function Comparison({ content }: { content: ComparisonContent }) {
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="mb-4 text-center text-2xl font-bold text-navy-dark sm:text-3xl">
-          OpenClaw vs Klawn
+          {content.heading}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-muted sm:mb-16 sm:text-base">
-          OpenClaw의 철학을 계승하면서, 엔터프라이즈에 필요한 보안과 관리 기능을 더했습니다.
+          {content.subheading}
         </p>
 
         {/* Desktop table */}
@@ -20,19 +20,19 @@ export function Comparison() {
                   기능
                 </th>
                 <th className="px-6 py-4 text-left font-medium text-muted">
-                  OpenClaw (개인용)
+                  {content.leftLabel}
                 </th>
                 <th className="px-6 py-4 text-left font-semibold text-copper">
-                  Klawn (엔터프라이즈)
+                  {content.rightLabel}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {COMPARISON_ROWS.map((row, idx) => (
+              {content.rows.map((row, idx) => (
                 <tr
                   key={row.feature}
                   className={
-                    idx < COMPARISON_ROWS.length - 1
+                    idx < content.rows.length - 1
                       ? "border-b border-border"
                       : ""
                   }
@@ -40,8 +40,10 @@ export function Comparison() {
                   <td className="px-6 py-3 font-medium text-navy-dark">
                     {row.feature}
                   </td>
-                  <td className="px-6 py-3 text-muted">{row.openclaw}</td>
-                  <td className="px-6 py-3 font-medium text-foreground">{row.klawn}</td>
+                  <td className="px-6 py-3 text-muted">{row.left}</td>
+                  <td className="px-6 py-3 font-medium text-foreground">
+                    {row.right}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -50,7 +52,7 @@ export function Comparison() {
 
         {/* Mobile cards */}
         <div className="space-y-3 sm:hidden">
-          {COMPARISON_ROWS.map((row) => (
+          {content.rows.map((row) => (
             <div
               key={row.feature}
               className="rounded-xl border border-border bg-surface p-4"
@@ -59,10 +61,12 @@ export function Comparison() {
                 {row.feature}
               </div>
               <div className="mb-1 text-xs text-muted">
-                <span className="font-medium">OpenClaw:</span> {row.openclaw}
+                <span className="font-medium">{content.leftLabel}:</span>{" "}
+                {row.left}
               </div>
               <div className="text-xs font-medium text-foreground">
-                <span className="text-copper">Klawn:</span> {row.klawn}
+                <span className="text-copper">{content.rightLabel}:</span>{" "}
+                {row.right}
               </div>
             </div>
           ))}

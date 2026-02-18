@@ -2,16 +2,19 @@
 
 import { ShieldCheck, Scales, Eye } from "@phosphor-icons/react";
 import { PII_DEMO, RBAC_TIERS } from "@/lib/constants";
+import type { SecurityContent } from "@/lib/content/types";
 
-export function Security() {
+export function Security({ content }: { content: SecurityContent }) {
+  const rbacLabels = content.rbacLabels ?? RBAC_TIERS;
+
   return (
     <section id="security" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="mb-4 text-center text-2xl font-bold text-navy-dark sm:text-3xl">
-          보안이 기본입니다
+          {content.heading}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-muted sm:mb-16 sm:text-base">
-          모든 입력은 비신뢰로 취급됩니다. PII 마스킹, 접근 제어, 규정 준수가 아키텍처에 내장되어 있습니다.
+          {content.subheading}
         </p>
 
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
@@ -54,7 +57,7 @@ export function Security() {
               RBAC + ABAC + SSO. 도구별 실행 권한과 데이터 분류 등급 관리.
             </p>
             <div className="space-y-2">
-              {RBAC_TIERS.map((tier, idx) => (
+              {rbacLabels.map((tier, idx) => (
                 <div key={tier} className="flex items-center gap-2 sm:gap-3">
                   <div
                     className="h-2 rounded-full bg-gradient-to-r from-navy to-copper"

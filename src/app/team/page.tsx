@@ -10,9 +10,9 @@ import { Pricing } from "@/components/sections/pricing";
 import { Deployment } from "@/components/sections/deployment";
 import { CTA } from "@/components/sections/cta";
 import { Footer } from "@/components/sections/footer";
-import content from "@/lib/content/main";
+import content from "@/lib/content/team";
 
-export default function Home() {
+export default function TeamPage() {
   return (
     <>
       <Navbar />

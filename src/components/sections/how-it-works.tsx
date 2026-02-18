@@ -10,7 +10,10 @@ import {
   UsersThree,
   MagnifyingGlass,
   Rocket,
+  EnvelopeSimple,
+  Wrench,
 } from "@phosphor-icons/react";
+import type { HowItWorksContent } from "@/lib/content/types";
 
 const WIZARD_STEPS = [
   {
@@ -98,22 +101,51 @@ const WIZARD_STEPS = [
   },
 ];
 
+const SIMPLE_ICON_MAP: Record<string, typeof EnvelopeSimple> = {
+  envelope: EnvelopeSimple,
+  wrench: Wrench,
+  rocket: Rocket,
+};
+
 function LinePrefix({ type }: { type: string }) {
   switch (type) {
     case "check":
-      return <CheckCircle weight="fill" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-400" />;
+      return (
+        <CheckCircle
+          weight="fill"
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-400"
+        />
+      );
     case "spinner":
-      return <CircleNotch weight="bold" className="mt-0.5 h-3.5 w-3.5 shrink-0 animate-spin text-copper-light" />;
+      return (
+        <CircleNotch
+          weight="bold"
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 animate-spin text-copper-light"
+        />
+      );
     case "done":
-      return <CheckCircle weight="fill" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-copper-light" />;
+      return (
+        <CheckCircle
+          weight="fill"
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 text-copper-light"
+        />
+      );
     case "file":
-      return <span className="mt-0.5 shrink-0 text-xs text-white/30">{">"}</span>;
+      return (
+        <span className="mt-0.5 shrink-0 text-xs text-white/30">{">"}</span>
+      );
     case "input":
-      return <span className="mt-0.5 shrink-0 text-xs text-copper/70">{">"}</span>;
+      return (
+        <span className="mt-0.5 shrink-0 text-xs text-copper/70">{">"}</span>
+      );
     case "select":
-      return <span className="mt-0.5 shrink-0 text-xs text-copper/70">{">"}</span>;
+      return (
+        <span className="mt-0.5 shrink-0 text-xs text-copper/70">{">"}</span>
+      );
     default:
-      return <span className="mt-0.5 shrink-0 text-xs text-white/30">$</span>;
+      return (
+        <span className="mt-0.5 shrink-0 text-xs text-white/30">$</span>
+      );
   }
 }
 
@@ -136,117 +168,157 @@ function StepDots({ current }: { current: number }) {
   );
 }
 
-export function HowItWorks() {
+function TechnicalWizard() {
+  return (
+    <div className="mx-auto max-w-4xl overflow-hidden rounded-xl border border-navy-dark/10 shadow-2xl">
+      {/* Title bar */}
+      <div className="flex items-center gap-2 border-b border-white/5 bg-navy-dark px-4 py-2.5">
+        <div className="flex gap-1.5">
+          <div className="h-3 w-3 rounded-full bg-red-400/80" />
+          <div className="h-3 w-3 rounded-full bg-yellow-400/80" />
+          <div className="h-3 w-3 rounded-full bg-green-400/80" />
+        </div>
+        <span className="ml-2 font-mono text-xs text-white/40">
+          npx create-klawn
+        </span>
+      </div>
+
+      {/* Terminal content */}
+      <div className="bg-[#1A1D3A] p-4 sm:p-6">
+        {/* Banner */}
+        <div className="mb-6 font-mono text-[10px] leading-relaxed text-white/50 sm:text-xs">
+          <pre className="whitespace-pre">
+            {`  █▄▀  █    ▄▀█  █   █  █▄  █
+  █ █  █▄▄  █▀█  ▀▄▀▄▀  █ ▀▄█
+  ─────────────────────────────
+  Enterprise AI Agent Installer`}
+          </pre>
+        </div>
+
+        {/* Steps grid */}
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
+          {WIZARD_STEPS.map((step, stepIdx) => {
+            const Icon = step.icon;
+            const stepNum = stepIdx;
+            const isLast = stepIdx === WIZARD_STEPS.length - 1;
+
+            return (
+              <div
+                key={step.step}
+                className={`rounded-lg border px-3 py-3 sm:px-4 sm:py-3.5 ${
+                  isLast
+                    ? "border-copper/30 bg-copper/5 md:col-span-2"
+                    : "border-white/5 bg-white/[0.02]"
+                }`}
+              >
+                {/* Step header */}
+                <div className="mb-2 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Icon
+                      weight="light"
+                      className={`h-4 w-4 ${isLast ? "text-copper-light" : "text-white/50"}`}
+                    />
+                    <span className="font-mono text-[11px] font-medium text-white/70 sm:text-xs">
+                      Step {step.step}
+                    </span>
+                    <span className="text-xs font-semibold text-white/90 sm:text-sm">
+                      {step.title}
+                    </span>
+                    <span className="hidden text-[10px] text-white/30 sm:inline">
+                      {step.subtitle}
+                    </span>
+                  </div>
+                  <StepDots current={stepNum} />
+                </div>
+
+                {/* Step lines */}
+                <div className="space-y-1">
+                  {step.lines.map((line) => (
+                    <div
+                      key={line.text}
+                      className="flex items-start gap-2 font-mono"
+                    >
+                      <LinePrefix type={line.prefix} />
+                      <span
+                        className={`text-[11px] sm:text-xs ${
+                          line.prefix === "done"
+                            ? "font-semibold text-copper-light"
+                            : "text-white/70"
+                        }`}
+                      >
+                        {line.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Final output */}
+        <div className="mt-5 border-t border-white/5 pt-4 font-mono text-xs">
+          <div className="flex items-center gap-2 text-copper-light">
+            <CheckCircle weight="fill" className="h-4 w-4" />
+            <span className="font-semibold">Klawn is ready!</span>
+          </div>
+          <div className="mt-1.5 text-white/40">
+            <span className="text-white/60">{">"}</span>{" "}
+            http://localhost:8080/admin
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SimpleSteps({
+  steps,
+}: {
+  steps: { title: string; description: string; iconKey: string }[];
+}) {
+  return (
+    <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
+      {steps.map((step, idx) => {
+        const Icon = SIMPLE_ICON_MAP[step.iconKey] ?? Rocket;
+        return (
+          <div
+            key={step.title}
+            className="relative rounded-xl border border-border bg-white p-6 text-center"
+          >
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-copper/10">
+              <Icon weight="light" className="h-6 w-6 text-copper" />
+            </div>
+            <div className="mb-1 font-mono text-xs text-copper">
+              Step {idx + 1}
+            </div>
+            <h3 className="mb-2 text-lg font-semibold text-navy-dark">
+              {step.title}
+            </h3>
+            <p className="text-sm text-muted">{step.description}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export function HowItWorks({ content }: { content: HowItWorksContent }) {
   return (
     <section className="bg-surface py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="mb-4 text-center text-2xl font-bold text-navy-dark sm:text-3xl">
-          시작 방법
+          {content.heading}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-muted sm:mb-16 sm:text-base">
-          npx create-klawn 한 줄이면 7단계 마법사가 설치부터 배포까지 안내합니다.
+          {content.subheading}
         </p>
 
-        {/* CLI window */}
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-xl border border-navy-dark/10 shadow-2xl">
-          {/* Title bar */}
-          <div className="flex items-center gap-2 border-b border-white/5 bg-navy-dark px-4 py-2.5">
-            <div className="flex gap-1.5">
-              <div className="h-3 w-3 rounded-full bg-red-400/80" />
-              <div className="h-3 w-3 rounded-full bg-yellow-400/80" />
-              <div className="h-3 w-3 rounded-full bg-green-400/80" />
-            </div>
-            <span className="ml-2 font-mono text-xs text-white/40">
-              npx create-klawn
-            </span>
-          </div>
-
-          {/* Terminal content */}
-          <div className="bg-[#1A1D3A] p-4 sm:p-6">
-            {/* Banner */}
-            <div className="mb-6 font-mono text-[10px] leading-relaxed text-white/50 sm:text-xs">
-              <pre className="whitespace-pre">
-{`  █▄▀  █    ▄▀█  █   █  █▄  █
-  █ █  █▄▄  █▀█  ▀▄▀▄▀  █ ▀▄█
-  ─────────────────────────────
-  Enterprise AI Agent Installer`}
-              </pre>
-            </div>
-
-            {/* Steps grid */}
-            <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
-              {WIZARD_STEPS.map((step, stepIdx) => {
-                const Icon = step.icon;
-                const stepNum = stepIdx;
-                const isLast = stepIdx === WIZARD_STEPS.length - 1;
-
-                return (
-                  <div
-                    key={step.step}
-                    className={`rounded-lg border px-3 py-3 sm:px-4 sm:py-3.5 ${
-                      isLast
-                        ? "border-copper/30 bg-copper/5 md:col-span-2"
-                        : "border-white/5 bg-white/[0.02]"
-                    }`}
-                  >
-                    {/* Step header */}
-                    <div className="mb-2 flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Icon
-                          weight="light"
-                          className={`h-4 w-4 ${isLast ? "text-copper-light" : "text-white/50"}`}
-                        />
-                        <span className="font-mono text-[11px] font-medium text-white/70 sm:text-xs">
-                          Step {step.step}
-                        </span>
-                        <span className="text-xs font-semibold text-white/90 sm:text-sm">
-                          {step.title}
-                        </span>
-                        <span className="hidden text-[10px] text-white/30 sm:inline">
-                          {step.subtitle}
-                        </span>
-                      </div>
-                      <StepDots current={stepNum} />
-                    </div>
-
-                    {/* Step lines */}
-                    <div className="space-y-1">
-                      {step.lines.map((line) => (
-                        <div
-                          key={line.text}
-                          className="flex items-start gap-2 font-mono"
-                        >
-                          <LinePrefix type={line.prefix} />
-                          <span
-                            className={`text-[11px] sm:text-xs ${
-                              line.prefix === "done"
-                                ? "font-semibold text-copper-light"
-                                : "text-white/70"
-                            }`}
-                          >
-                            {line.text}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Final output */}
-            <div className="mt-5 border-t border-white/5 pt-4 font-mono text-xs">
-              <div className="flex items-center gap-2 text-copper-light">
-                <CheckCircle weight="fill" className="h-4 w-4" />
-                <span className="font-semibold">Klawn is ready!</span>
-              </div>
-              <div className="mt-1.5 text-white/40">
-                <span className="text-white/60">{">"}</span>{" "}
-                http://localhost:8080/admin
-              </div>
-            </div>
-          </div>
-        </div>
+        {content.variant === "simple" && content.simpleSteps ? (
+          <SimpleSteps steps={content.simpleSteps} />
+        ) : (
+          <TechnicalWizard />
+        )}
       </div>
     </section>
   );

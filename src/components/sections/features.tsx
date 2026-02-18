@@ -7,37 +7,51 @@ import {
   ClockCounterClockwise,
   Plugs,
   Layout,
+  Calculator,
+  Megaphone,
+  Handshake,
+  Gear,
+  Headset,
+  UsersThree,
+  ShieldCheck,
 } from "@phosphor-icons/react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { FEATURES } from "@/lib/constants";
+import type { FeaturesContent } from "@/lib/content/types";
 
-const ICONS = [
-  <Brain key="brain" weight="thin" className="h-7 w-7 text-copper" />,
-  <Fingerprint key="fp" weight="thin" className="h-7 w-7 text-copper" />,
-  <LockKey key="lock" weight="thin" className="h-7 w-7 text-copper" />,
-  <ClockCounterClockwise key="clock" weight="thin" className="h-7 w-7 text-copper" />,
-  <Plugs key="plugs" weight="thin" className="h-7 w-7 text-copper" />,
-  <Layout key="layout" weight="thin" className="h-7 w-7 text-copper" />,
-];
+const ICON_MAP: Record<string, React.ReactNode> = {
+  brain: <Brain weight="thin" className="h-7 w-7 text-copper" />,
+  fingerprint: <Fingerprint weight="thin" className="h-7 w-7 text-copper" />,
+  lock: <LockKey weight="thin" className="h-7 w-7 text-copper" />,
+  clock: <ClockCounterClockwise weight="thin" className="h-7 w-7 text-copper" />,
+  plugs: <Plugs weight="thin" className="h-7 w-7 text-copper" />,
+  layout: <Layout weight="thin" className="h-7 w-7 text-copper" />,
+  calculator: <Calculator weight="thin" className="h-7 w-7 text-copper" />,
+  megaphone: <Megaphone weight="thin" className="h-7 w-7 text-copper" />,
+  handshake: <Handshake weight="thin" className="h-7 w-7 text-copper" />,
+  gear: <Gear weight="thin" className="h-7 w-7 text-copper" />,
+  headset: <Headset weight="thin" className="h-7 w-7 text-copper" />,
+  users: <UsersThree weight="thin" className="h-7 w-7 text-copper" />,
+  shield: <ShieldCheck weight="thin" className="h-7 w-7 text-copper" />,
+};
 
-export function Features() {
+export function Features({ content }: { content: FeaturesContent }) {
   return (
     <section id="features" className="bg-surface py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="mb-4 text-center text-2xl font-bold text-navy-dark sm:text-3xl">
-          핵심 기능
+          {content.heading}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-muted sm:mb-16 sm:text-base">
-          에이전트부터 감사 추적까지. 엔터프라이즈에 필요한 모든 것을 갖추고 있습니다.
+          {content.subheading}
         </p>
         <BentoGrid>
-          {FEATURES.map((feature, idx) => (
+          {content.items.map((feature) => (
             <BentoGridItem
               key={feature.title}
               title={feature.title}
               description={feature.description}
               bullets={feature.bullets}
-              icon={ICONS[idx]}
+              icon={ICON_MAP[feature.iconKey]}
               className={feature.large ? "md:col-span-2" : ""}
             />
           ))}
