@@ -2,7 +2,6 @@ export const NAV_ITEMS = [
   { name: "기능", link: "#features" },
   { name: "보안", link: "#security" },
   { name: "배포", link: "#deployment" },
-  { name: "GitHub", link: "https://github.com/flowos-kj/klawn" },
 ];
 
 export const TRUST_ITEMS = [
