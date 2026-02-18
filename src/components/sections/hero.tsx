@@ -1,3 +1,5 @@
+"use client";
+
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { EnvelopeSimple } from "@phosphor-icons/react";
