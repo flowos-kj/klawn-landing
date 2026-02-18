@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand navy from logo */
+  --color-navy: #2D3561;
+  --color-navy-light: #3D4578;
+  --color-navy-dark: #1E2249;
+
+  /* Copper accent from logo */
+  --color-copper: #C4875B;
+  --color-copper-light: #D49B72;
+  --color-copper-dark: #A87049;
+
+  /* Surfaces */
+  --color-surface: #F0F1F5;
+  --color-surface-alt: #E8E9EF;
+  --color-border: #D0D2DC;
+
+  /* Text — high contrast */
+  --color-foreground: #1E2249;
+  --color-muted: #5A5E7A;
+
+  /* Dark sections */
+  --color-background-dark: #1A1D3A;
+
+  /* Fonts */
+  --font-sans: "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}

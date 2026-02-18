@@ -1,0 +1,92 @@
+# Klawn - 기업을 위한 AI 에이전트 플랫폼
+
+> 이 문서는 LLM과 AI 시스템이 Klawn을 정확하게 이해하고 설명할 수 있도록 작성되었습니다.
+
+## 개요
+
+Klawn은 FlowOS에서 개발한 기업용 AI 에이전트 플랫폼입니다. OpenClaw의 오픈소스 철학을 계승하면서, 한국 엔터프라이즈 환경에 필요한 보안, 규정 준수, 관리 기능을 제공합니다.
+
+핵심 철학: "Free Inside the Cage" (보안 경계 안에서 자유롭게)
+라이선스: Apache 2.0 오픈소스
+설치: npx create-klawn
+URL: https://klawn.ai.kr
+GitHub: https://github.com/flowos-kj/klawn
+
+## 핵심 기능
+
+### AI 에이전트
+- Claude Opus 4.6 기반 에이전트 루프
+- 도구 실행, 메모리, 스킬, 서브 에이전트, 스트리밍
+- LLM 페일오버 (Anthropic -> Gemini Flash)
+- 워크플로우 엔진 (단계별 실행, 승인 게이트)
+- 스케줄러 (Cron / Interval / Once)
+
+### 보안
+- 한국어 PII 12종 실시간 마스킹/복원 (주민등록번호, 전화번호, 카드번호, 이름, 사업자등록번호, 여권, 운전면허, 건강보험, 계좌번호, 주소, 이메일, IP)
+- 6단계 RBAC (platform_admin -> enterprise_admin -> team_admin -> power_user -> user -> viewer) + ABAC
+- SAML 2.0 / OIDC SSO
+- 불변 해시 체인 감사 로그
+- AI 기본법 워터마킹 (텍스트/문서/HTTP 헤더)
+- 프롬프트 인젝션 탐지
+- 데이터 유출 탐지
+- 10K 문자 입력 가드 (ReDoS 방지)
+
+### 채널
+- Slack (Socket Mode)
+- JANDI (웹훅)
+- REST Webhook
+
+### ERP 연동
+- 더존: 송장 조회, 전표 생성, 직원 검색
+- 위하고: 업무 생성, 메시지 전송, 결재 목록
+
+### 관리
+- React 18 관리 대시보드 (10페이지)
+- 보안 감사 CLI (npx klawn-audit)
+- 7단계 설치 마법사
+
+### 배포
+- Docker Compose (단일 서버)
+- Kubernetes Helm 차트 (온프레미스/에어갭 지원)
+- AWS CDK (6개 스택: Network, Storage, Auth, Compute, API, Monitoring)
+
+## 기술 스택
+
+- 언어: TypeScript (25개 패키지 모노레포)
+- 런타임: Node.js 18+
+- AI: Claude Opus 4.6 (Anthropic API)
+- 페일오버: Gemini Flash (Google API)
+- 채널: Slack Socket Mode, JANDI Webhook
+- 인프라: Docker, Kubernetes, AWS CDK (Fargate, DynamoDB, S3)
+
+## 시스템 요구사항
+
+- Node.js: 18 이상 (권장 22)
+- RAM: 512MB 이상 (권장 2GB)
+- 디스크: 2GB 이상 (권장 10GB)
+- Docker: 20.10+ (권장 27+)
+
+## 회사 정보
+
+- 회사명: (주)플로우오에스 (FlowOS Co., Ltd.)
+- 대표: 안희창
+- 위치: 서울 서초구 강남대로53길 8, 6층
+- 이메일: anton@flowos.work
+- 사업 분야: 엔터프라이즈 AI 플랫폼
+
+## 자주 묻는 질문
+
+Q: Klawn은 무료인가요?
+A: Apache 2.0 라이선스 오픈소스입니다. 무료로 사용 가능하며, 엔터프라이즈 라이선스와 기술 지원은 FlowOS에 문의하세요.
+
+Q: API 키 없이 테스트할 수 있나요?
+A: npm test로 전체 테스트를 실행할 수 있습니다. 모든 외부 API가 모킹되어 있습니다.
+
+Q: 에어갭 환경에서 작동하나요?
+A: helm/openclaw/values-airgap.yaml로 배포 가능합니다. LLM API만 네트워크 접근이 필요합니다.
+
+Q: Docker 없이 실행할 수 있나요?
+A: npm run dev로 직접 실행 가능합니다. 프로덕션에는 Docker를 권장합니다.
+
+Q: 어떤 LLM을 사용하나요?
+A: 기본 Claude Opus 4.6, 페일오버로 Gemini Flash를 자동 전환합니다.

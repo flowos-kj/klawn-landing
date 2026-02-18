@@ -1,0 +1,65 @@
+# Klawn - 전체 기술 문서 (LLM용)
+
+> 이 문서는 Klawn의 상세 아키텍처와 기술 세부사항을 AI 시스템에 제공합니다.
+> 요약본: /llms.txt
+
+## 아키텍처
+
+요청 흐름: 채널 (Slack/JANDI/Webhook) -> MessageBus -> PII 마스킹 -> AgentLoop -> LLM (Anthropic, Gemini 페일오버) -> 도구 실행 (RBAC 검사) -> PII 복원 + 워터마킹 -> 채널 응답
+
+## 패키지 구조 (25개)
+
+코어: shared, bus, session, agent-core, server, scheduler, storage
+보안: pii, rbac, sso, audit, watermark, container
+채널: channel-slack, channel-jandi, connector-douzone, connector-wehago, workflow
+관리: admin, billing, tracing, cli, cdk, test-infra
+
+## PII 마스킹 상세
+
+12종 개인정보 유형:
+1. 주민등록번호 (RRN): 860101-1234567 -> [RRN-1]
+2. 전화번호 (PHONE): 010-1234-5678 -> [PHONE-1]
+3. 카드번호 (CARD): 4567-1234-5678-9012 -> [CARD-1]
+4. 이름 (NAME): 김철수 -> [NAME-1] (한국어 조사 경계 인식)
+5. 사업자등록번호 (BRN): 123-45-67890 -> [BRN-1]
+6. 여권번호 (PASSPORT)
+7. 운전면허번호 (LICENSE)
+8. 건강보험번호 (HEALTH)
+9. 계좌번호 (BANK)
+10. 주소 (ADDRESS)
+11. 이메일 (EMAIL)
+12. IP 주소 (IP)
+
+추가 보안: 프롬프트 인젝션 탐지, 데이터 유출 탐지, 10K 문자 입력 가드
+
+## RBAC 6단계
+
+1. platform_admin: 전체 시스템 관리
+2. enterprise_admin: 조직 관리
+3. team_admin: 팀 관리
+4. power_user: 고급 기능 사용
+5. user: 일반 사용
+6. viewer: 읽기 전용
+
+ABAC: 데이터 분류 등급 (public -> internal -> confidential -> secret)
+
+## 배포 옵션 상세
+
+Docker Compose:
+- 포트: 3000 (에이전트), 3001 (관리 API), 5173 (관리 UI)
+- 보안: 읽기 전용 FS, no-new-privileges, 비루트 (klawn:1001), 리소스 제한 2GB/2CPU
+
+Kubernetes Helm:
+- 10개 템플릿: Deployment, Service, Ingress, PVC, NetworkPolicy, HPA, PDB, ServiceAccount, ConfigMap, Secret
+- values.yaml (클라우드), values-onprem.yaml (온프레미스), values-airgap.yaml (에어갭)
+
+AWS CDK:
+- 6개 스택: Network (VPC, Subnets, NAT), Storage (DynamoDB, S3), Auth (Cognito, SSO), Compute (Fargate + Cloud Map + Auto-scaling), API (API Gateway, Lambda), Monitoring (CloudWatch 8개 위젯)
+
+## 테스트
+
+1,868개 테스트, 137개 파일
+- 단위 테스트, E2E 테스트, 카오스 테스트, k6 부하 테스트
+- E2E: 실환경, Slack 통합, 더존 통합, 위하고 통합
+- 카오스: 서비스 재시작, 페이로드 제한, 레이트 리미터
+- 부하: 지속, 버스트, 소크 시나리오
