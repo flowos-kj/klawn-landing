@@ -179,7 +179,7 @@ const content: PageContent = {
       "2025년 최저임금 기준. 추가 비용 없이, 24시간 일하는 직원을 얻습니다.",
     monthlyWage: "₩2,156,880",
     monthlyWageNumber: "월급",
-    setupNote: "설치비 별도 (합리적 가격)",
+    setupNote: "설치비 포함",
     benefits: [
       "4대보험 없음",
       "식대 없음",

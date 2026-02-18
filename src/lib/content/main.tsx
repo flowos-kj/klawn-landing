@@ -154,7 +154,7 @@ const content: PageContent = {
     subheading: "2025년 최저임금 기준. 사람보다 저렴하고, 사람보다 빠릅니다.",
     monthlyWage: "₩2,156,880",
     monthlyWageNumber: "월급",
-    setupNote: "설치비 별도 (합리적 가격)",
+    setupNote: "설치비 포함",
     benefits: [
       "4대보험 없음",
       "식대 없음",

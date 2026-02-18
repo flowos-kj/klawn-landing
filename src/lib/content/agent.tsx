@@ -163,7 +163,7 @@ const content: PageContent = {
       "사용자당 과금 없이, 월 정액제로 엔터프라이즈 AI 에이전트를 운영하세요.",
     monthlyWage: "₩2,156,880",
     monthlyWageNumber: "월 정액",
-    setupNote: "설치비 별도 (합리적 가격)",
+    setupNote: "설치비 포함",
     benefits: [
       "사용자 수 제한 없음",
       "온프레미스 배포 포함",
