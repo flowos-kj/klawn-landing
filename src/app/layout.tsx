@@ -30,7 +30,6 @@ const KEYWORDS = [
   "위하고",
   "Slack AI",
   "JANDI AI",
-  "오픈소스 AI",
   "FlowOS",
   "한국 AI 플랫폼",
   "AI 워터마킹",

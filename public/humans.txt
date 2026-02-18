@@ -10,7 +10,6 @@ Website: https://flowos.work
 
 Name: Klawn
 Description: 기업을 위한 AI 에이전트 플랫폼
-License: Apache 2.0
 Repository: https://github.com/flowos-kj/klawn
 Install: npx create-klawn
 

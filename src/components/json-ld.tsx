@@ -22,7 +22,7 @@ const organizationSchema = {
     contactType: "sales",
     availableLanguage: ["Korean", "English"],
   },
-  sameAs: ["https://github.com/flowos-kj/klawn"],
+  sameAs: [],
 };
 
 const softwareSchema = {
@@ -35,16 +35,12 @@ const softwareSchema = {
   description:
     "기업을 위한 AI 에이전트 플랫폼. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹을 제공합니다.",
   url: SITE_URL,
-  downloadUrl: "https://github.com/flowos-kj/klawn",
   installUrl: "https://www.npmjs.com/package/create-klawn",
   softwareVersion: "1.0.0",
-  license: "https://opensource.org/licenses/Apache-2.0",
-  isAccessibleForFree: true,
   offers: {
     "@type": "Offer",
-    price: "0",
     priceCurrency: "KRW",
-    description: "Apache 2.0 오픈소스 라이선스",
+    description: "라이선스 및 가격은 FlowOS에 문의",
   },
   author: {
     "@type": "Organization",
@@ -111,10 +107,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Klawn은 무료인가요?",
+      name: "Klawn의 가격은 어떻게 되나요?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Klawn은 Apache 2.0 라이선스의 오픈소스 소프트웨어입니다. 무료로 사용할 수 있으며, 엔터프라이즈 라이선스와 기술 지원이 필요한 경우 FlowOS에 문의하시면 됩니다.",
+        text: "라이선스 및 가격에 대해서는 FlowOS에 문의하시면 됩니다.",
       },
     },
     {

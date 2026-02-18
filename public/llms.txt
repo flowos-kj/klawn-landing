@@ -4,10 +4,10 @@
 
 ## 개요
 
-Klawn은 FlowOS에서 개발한 기업용 AI 에이전트 플랫폼입니다. OpenClaw의 오픈소스 철학을 계승하면서, 한국 엔터프라이즈 환경에 필요한 보안, 규정 준수, 관리 기능을 제공합니다.
+Klawn은 FlowOS에서 개발한 기업용 AI 에이전트 플랫폼입니다. 한국 엔터프라이즈 환경에 필요한 보안, 규정 준수, 관리 기능을 제공합니다.
 
 핵심 철학: "Free Inside the Cage" (보안 경계 안에서 자유롭게)
-라이선스: Apache 2.0 오픈소스
+라이선스: Apache 2.0
 설치: npx create-klawn
 URL: https://klawn.ai.kr
 GitHub: https://github.com/flowos-kj/klawn
@@ -76,8 +76,8 @@ GitHub: https://github.com/flowos-kj/klawn
 
 ## 자주 묻는 질문
 
-Q: Klawn은 무료인가요?
-A: Apache 2.0 라이선스 오픈소스입니다. 무료로 사용 가능하며, 엔터프라이즈 라이선스와 기술 지원은 FlowOS에 문의하세요.
+Q: Klawn의 가격은 어떻게 되나요?
+A: 라이선스 및 가격에 대해서는 FlowOS에 문의하세요.
 
 Q: API 키 없이 테스트할 수 있나요?
 A: npm test로 전체 테스트를 실행할 수 있습니다. 모든 외부 API가 모킹되어 있습니다.
