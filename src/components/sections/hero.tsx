@@ -3,6 +3,7 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { EnvelopeSimple } from "@phosphor-icons/react";
+import Image from "next/image";
 import type { HeroContent } from "@/lib/content/types";
 
 export function Hero({ content }: { content: HeroContent }) {
@@ -10,10 +11,16 @@ export function Hero({ content }: { content: HeroContent }) {
     <AuroraBackground>
       <div className="relative z-10 flex min-h-svh flex-col items-center justify-center px-4 py-20 sm:px-6">
         <div className="w-full max-w-4xl text-center">
-          {/* Brand name */}
-          <h1 className="mb-6 font-mono text-lg font-bold uppercase tracking-[0.3em] text-copper-light sm:mb-8 sm:text-xl md:text-2xl">
-            Klawn
-          </h1>
+          {/* Brand logo */}
+          <div className="mb-6 flex justify-center sm:mb-8">
+            <Image
+              src="/klawn.png"
+              alt="Klawn"
+              width={120}
+              height={80}
+              className="h-20 w-auto"
+            />
+          </div>
 
           <TextGenerateEffect
             words={content.headline}
