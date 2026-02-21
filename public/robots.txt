@@ -3,17 +3,32 @@ Allow: /
 
 Sitemap: https://klawn.ai.kr/sitemap.xml
 
-# AI Crawlers
+# LLM / AI context files
+# https://llmstxt.org
+# /llms.txt - concise summary for AI systems
+# /llms-full.txt - full technical documentation
+# /humans.txt - human-readable credits
+
+# AI Crawlers — explicitly allowed for GEO (Generative Engine Optimization)
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: CCBot
@@ -27,3 +42,36 @@ Allow: /
 
 User-agent: cohere-ai
 Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

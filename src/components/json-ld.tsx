@@ -3,10 +3,17 @@ const SITE_URL = "https://klawn.ai.kr";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "FlowOS Co., Ltd.",
   alternateName: "(주)플로우오에스",
   url: "https://flowos.work",
-  logo: `${SITE_URL}/klawn-logo.jpeg`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/klawn-logo.jpeg`,
+    width: 512,
+    height: 512,
+  },
+  image: `${SITE_URL}/klawn-logo.jpeg`,
   foundingDate: "2025",
   address: {
     "@type": "PostalAddress",
@@ -22,12 +29,16 @@ const organizationSchema = {
     contactType: "sales",
     availableLanguage: ["Korean", "English"],
   },
-  sameAs: [],
+  sameAs: [
+    "https://github.com/flowos-kj/klawn",
+    "https://www.npmjs.com/package/create-klawn",
+  ],
 };
 
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/#software`,
   name: "Klawn",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "AI Agent Platform",
@@ -36,6 +47,7 @@ const softwareSchema = {
     "기업을 위한 AI 에이전트 플랫폼. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹을 제공합니다.",
   url: SITE_URL,
   installUrl: "https://www.npmjs.com/package/create-klawn",
+  downloadUrl: "https://www.npmjs.com/package/create-klawn",
   softwareVersion: "1.0.0",
   offers: {
     "@type": "Offer",
@@ -44,6 +56,12 @@ const softwareSchema = {
   },
   author: {
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "FlowOS Co., Ltd.",
+  },
+  provider: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     name: "FlowOS Co., Ltd.",
   },
   featureList: [
@@ -58,13 +76,15 @@ const softwareSchema = {
     "Docker / Kubernetes / AWS CDK 배포",
     "React 관리 대시보드 10페이지",
   ],
-  screenshot: `${SITE_URL}/og-image.png`,
+  screenshot: `${SITE_URL}/opengraph-image`,
   inLanguage: "ko",
+  softwareRequirements: "Node.js 18+, Docker 20.10+",
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: "Klawn",
   alternateName: "클라운",
   url: SITE_URL,
@@ -73,13 +93,53 @@ const websiteSchema = {
   inLanguage: "ko-KR",
   publisher: {
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     name: "FlowOS Co., Ltd.",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/#webpage`,
+  url: SITE_URL,
+  name: "Klawn - 기업을 위한 AI 에이전트 플랫폼",
+  description:
+    "보안 경계 안에서 자유롭게 동작하는 엔터프라이즈 AI 에이전트. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹.",
+  isPartOf: {
+    "@id": `${SITE_URL}/#website`,
+  },
+  about: {
+    "@id": `${SITE_URL}/#software`,
+  },
+  inLanguage: "ko-KR",
+  datePublished: "2025-01-01",
+  dateModified: "2026-02-21",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "홈",
+        item: SITE_URL,
+      },
+    ],
   },
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": `${SITE_URL}/#faq`,
   mainEntity: [
     {
       "@type": "Question",
@@ -107,10 +167,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "Klawn과 ChatGPT의 차이점은 무엇인가요?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Klawn은 엔터프라이즈 전용으로, ChatGPT에 없는 온프레미스 배포, PII 마스킹, 6단계 RBAC, 불변 감사 추적, PIPA/AI 기본법 컴플라이언스를 제공합니다. 데이터가 조직의 보안 경계 안에 머무릅니다.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Klawn의 가격은 어떻게 되나요?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "라이선스 및 가격에 대해서는 FlowOS에 문의하시면 됩니다.",
+        text: "라이선스 및 가격에 대해서는 FlowOS에 문의하시면 됩니다. 기업 규모와 요구사항에 맞는 맞춤 견적을 제공합니다.",
       },
     },
     {
@@ -127,6 +195,14 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Slack(Socket Mode), JANDI(웹훅), REST Webhook을 지원합니다. ERP 연동으로는 더존(송장 조회, 전표 생성, 직원 검색)과 위하고(업무 생성, 메시지 전송, 결재 목록)를 제공합니다.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "에어갭(폐쇄망) 환경에서 사용할 수 있나요?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "네, Kubernetes Helm 차트의 values-airgap.yaml로 에어갭 환경에 배포할 수 있습니다. LLM API 호출만 네트워크 접근이 필요합니다.",
       },
     },
   ],
@@ -151,6 +227,12 @@ export function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       <script

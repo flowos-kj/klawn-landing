@@ -10,6 +10,7 @@ const DESCRIPTION =
   "보안 경계 안에서 자유롭게 동작하는 엔터프라이즈 AI 에이전트. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹. Docker, Kubernetes, AWS CDK 배포 지원. 한 줄이면 시작됩니다.";
 const KEYWORDS = [
   "Klawn",
+  "클라운",
   "AI 에이전트",
   "엔터프라이즈 AI",
   "기업용 AI",
@@ -38,6 +39,13 @@ const KEYWORDS = [
   "Docker AI 배포",
   "Kubernetes AI",
   "AWS CDK AI",
+  "온프레미스 AI",
+  "AI 직원",
+  "ChatGPT 대안",
+  "기업용 ChatGPT",
+  "AI SaaS",
+  "AI 에이전트 자동화",
+  "엔터프라이즈 AI 보안",
 ];
 
 export const metadata: Metadata = {
@@ -100,7 +108,7 @@ export const metadata: Metadata = {
 
   other: {
     "naver-site-verification": "",
-    "google-site-verification": "",
+    "google-site-verification": "google7692ca65f33b22fb",
   },
 };
 
@@ -116,6 +124,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <link rel="author" type="text/plain" href="/humans.txt" />
       </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
