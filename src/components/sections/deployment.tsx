@@ -6,6 +6,7 @@ import {
   DeployCloudAws,
   DeployBuilding,
   DeployWrench,
+  DeployServerOnprem,
 } from "@/components/svg-animations";
 import type { DeploymentContent } from "@/lib/content/types";
 
@@ -15,6 +16,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   cloud: <DeployCloudAws className="h-28 w-28" />,
   building: <DeployBuilding className="h-28 w-28" />,
   wrench: <DeployWrench className="h-28 w-28" />,
+  server: <DeployServerOnprem className="h-28 w-28" />,
 };
 
 export function Deployment({ content }: { content: DeploymentContent }) {
@@ -28,7 +30,7 @@ export function Deployment({ content }: { content: DeploymentContent }) {
           {content.subheading}
         </p>
 
-        <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {content.options.map((opt) => (
             <div
               key={opt.title}

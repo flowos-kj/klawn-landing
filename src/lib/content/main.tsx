@@ -184,7 +184,7 @@ const content: PageContent = {
   deployment: {
     heading: "배포 옵션",
     subheading:
-      "단일 서버부터 클라우드 네이티브까지. 환경에 맞는 배포 방식을 선택하세요.",
+      "단일 서버부터 클라우드 네이티브, 온프레미스까지. 환경에 맞는 배포 방식을 선택하세요.",
     options: [
       {
         title: "Docker Compose",
@@ -206,6 +206,13 @@ const content: PageContent = {
           "6개 스택: Network, Storage, Auth, Compute, API, Monitoring. Fargate + 오토스케일링.",
         command: "npx cdk deploy --all",
         iconKey: "cloud",
+      },
+      {
+        title: "온프레미스",
+        description:
+          "사내 서버에 직접 설치. 데이터가 외부로 나가지 않습니다. 에어갭 환경 지원. 하드웨어 비용 별도.",
+        command: "전담 엔지니어 방문 설치",
+        iconKey: "server",
       },
     ],
   },

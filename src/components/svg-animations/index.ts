@@ -20,5 +20,6 @@ export { FeatureUsers } from "./feature-users";
 export { FeatureShield } from "./feature-shield";
 export { DeployBuilding } from "./deploy-building";
 export { DeployWrench } from "./deploy-wrench";
+export { DeployServerOnprem } from "./deploy-server-onprem";
 export { SkillsNetwork } from "./skills-network";
 export { SkillsAutoGenerate } from "./skills-auto-generate";

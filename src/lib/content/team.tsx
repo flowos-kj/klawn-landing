@@ -221,7 +221,7 @@ const content: PageContent = {
       {
         title: "온프레미스",
         description:
-          "회사 내부 서버에 직접 설치. 데이터가 외부로 나가지 않습니다.",
+          "회사 내부 서버에 직접 설치. 데이터가 외부로 나가지 않습니다. 하드웨어 비용 별도.",
         command: "데이터 완전 보호",
         iconKey: "building",
       },
