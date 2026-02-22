@@ -1,0 +1,61 @@
+export function DeployWrench(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <style dangerouslySetInnerHTML={{__html: `
+        .dw_wrench-group {
+            transform-origin: 60px 60px;
+            animation: tighten 3s ease-in-out infinite;
+        }
+        .dw_sparkle {
+            transform-origin: 45px 15px;
+            animation: shine 4s ease-in-out infinite;
+        }
+        @keyframes tighten {
+            0%, 100% { transform: rotate(45deg); }
+            50% { transform: rotate(60deg); }
+        }
+        @keyframes shine {
+            0%, 15%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            7.5% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+        }
+    `}} />
+
+    <rect width="120" height="120" fill="#F0F1F5" rx="20"/>
+
+    <g className="dw_wrench-group">
+        <path d="M 54 40 
+                 L 54 78 
+                 C 48 80, 44 85, 44 91 
+                 A 16 16 0 1 0 76 91 
+                 C 76 85, 72 80, 66 78 
+                 L 66 40 
+                 C 72 38, 76 33, 76 26 
+                 L 76 16 
+                 L 67 16 
+                 L 67 28 
+                 C 67 32, 64 35, 60 35 
+                 C 56 35, 53 32, 53 28 
+                 L 53 16 
+                 L 44 16 
+                 L 44 26 
+                 C 44 33, 48 38, 54 40 
+                 Z 
+                 M 60 84 
+                 A 7 7 0 1 1 60 98 
+                 A 7 7 0 1 1 60 84 
+                 Z" 
+              fill="#2D3561" fillRule="evenodd" stroke="#1E2249" strokeWidth="1.5" strokeLinejoin="round"/>
+        
+        <rect x="57" y="44" width="6" height="30" rx="3" fill="#3D4578" stroke="#1E2249" strokeWidth="1"/>
+
+        <path d="M 53 16 L 55 16 L 55 26 L 53 28 Z" fill="#C4875B" stroke="#A87049" strokeWidth="1" strokeLinejoin="round"/>
+        <path d="M 67 16 L 65 16 L 65 26 L 67 28 Z" fill="#C4875B" stroke="#A87049" strokeWidth="1" strokeLinejoin="round"/>
+        
+        <line x1="54" y1="17.5" x2="54" y2="24.5" stroke="#D49B72" strokeWidth="1.5" strokeLinecap="round"/>
+        <line x1="66" y1="17.5" x2="66" y2="24.5" stroke="#D49B72" strokeWidth="1.5" strokeLinecap="round"/>
+
+        <path className="dw_sparkle" d="M 45 9 Q 45 15 51 15 Q 45 15 45 21 Q 45 15 39 15 Q 45 15 45 9 Z" fill="#FFFFFF"/>
+    </g>
+</svg>
+  );
+}

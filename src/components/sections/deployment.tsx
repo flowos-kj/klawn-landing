@@ -4,6 +4,8 @@ import {
   DeployCubeDocker,
   DeployNetworkK8s,
   DeployCloudAws,
+  DeployBuilding,
+  DeployWrench,
 } from "@/components/svg-animations";
 import type { DeploymentContent } from "@/lib/content/types";
 
@@ -11,6 +13,8 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   cube: <DeployCubeDocker className="h-28 w-28" />,
   network: <DeployNetworkK8s className="h-28 w-28" />,
   cloud: <DeployCloudAws className="h-28 w-28" />,
+  building: <DeployBuilding className="h-28 w-28" />,
+  wrench: <DeployWrench className="h-28 w-28" />,
 };
 
 export function Deployment({ content }: { content: DeploymentContent }) {

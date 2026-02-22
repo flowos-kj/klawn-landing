@@ -1,0 +1,92 @@
+export function FeatureGear(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <style dangerouslySetInnerHTML={{__html: `
+    @keyframes spinCw { 
+      0% { transform: rotate(0deg); } 
+      100% { transform: rotate(360deg); } 
+    }
+    @keyframes spinCcw { 
+      0% { transform: rotate(0deg); } 
+      100% { transform: rotate(-360deg); } 
+    }
+    .fg_gear-outer {
+      transform-origin: 60px 60px;
+      animation: spinCw 20s linear infinite;
+    }
+    .fg_gear-inner {
+      transform-origin: 60px 60px;
+      animation: spinCcw 12s linear infinite;
+    }
+  `}} />
+  <defs>
+    <filter id="fg-extrude-outer" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="1.5" dy="2.5" in="SourceAlpha" result="offset"/>
+      <feFlood flood-color="#1E2249" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fg-extrude-inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="1.5" dy="2.5" in="SourceAlpha" result="offset"/>
+      <feFlood flood-color="#A87049" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <mask id="fg-outer-hole">
+      <rect width="120" height="120" fill="#FFFFFF"/>
+      <circle cx="60" cy="60" r="24" fill="#000000"/>
+    </mask>
+    <mask id="fg-inner-hole">
+      <rect width="120" height="120" fill="#FFFFFF"/>
+      <circle cx="60" cy="60" r="6" fill="#000000"/>
+    </mask>
+  </defs>
+
+  <rect width="120" height="120" fill="#F0F1F5" rx="16"/>
+
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#FFFFFF" strokeWidth="2"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#3D4578" strokeWidth="1" strokeDasharray="4 6"/>
+  <line x1="60" y1="10" x2="60" y2="110" stroke="#FFFFFF" strokeWidth="1"/>
+  <line x1="10" y1="60" x2="110" y2="60" stroke="#FFFFFF" strokeWidth="1"/>
+
+  <circle cx="60" cy="10" r="1.5" fill="#C4875B"/>
+  <circle cx="60" cy="110" r="1.5" fill="#C4875B"/>
+  <circle cx="10" cy="60" r="1.5" fill="#C4875B"/>
+  <circle cx="110" cy="60" r="1.5" fill="#C4875B"/>
+
+  <g filter="url(#fg-extrude-outer)">
+    <g className="fg_gear-outer" mask="url(#fg-outer-hole)">
+      <g fill="#2D3561">
+        <rect x="53" y="18" width="14" height="84" rx="3"/>
+        <rect x="53" y="18" width="14" height="84" rx="3" transform="rotate(45 60 60)"/>
+        <rect x="53" y="18" width="14" height="84" rx="3" transform="rotate(90 60 60)"/>
+        <rect x="53" y="18" width="14" height="84" rx="3" transform="rotate(135 60 60)"/>
+        <circle cx="60" cy="60" r="34"/>
+      </g>
+      <circle cx="60" cy="60" r="29" fill="none" stroke="#3D4578" strokeWidth="1.5"/>
+    </g>
+  </g>
+
+  <g filter="url(#fg-extrude-inner)">
+    <g className="fg_gear-inner" mask="url(#fg-inner-hole)">
+      <g fill="#C4875B">
+        <rect x="56" y="40" width="8" height="40" rx="2"/>
+        <rect x="56" y="40" width="8" height="40" rx="2" transform="rotate(60 60 60)"/>
+        <rect x="56" y="40" width="8" height="40" rx="2" transform="rotate(120 60 60)"/>
+        <circle cx="60" cy="60" r="14"/>
+      </g>
+      <circle cx="60" cy="60" r="10" fill="none" stroke="#D49B72" strokeWidth="1.5"/>
+    </g>
+  </g>
+
+  <circle cx="60" cy="60" r="3" fill="#F0F1F5"/>
+  <circle cx="60" cy="60" r="1.5" fill="#2D3561"/>
+</svg>
+  );
+}

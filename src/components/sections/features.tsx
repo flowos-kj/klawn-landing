@@ -7,6 +7,13 @@ import {
   FeatureClockAudit,
   FeaturePlugsErp,
   FeatureLayoutDashboard,
+  FeatureCalculator,
+  FeatureMegaphone,
+  FeatureHandshake,
+  FeatureGear,
+  FeatureHeadset,
+  FeatureUsers,
+  FeatureShield,
   KlawnCrab,
 } from "@/components/svg-animations";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
@@ -19,6 +26,13 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   clock: <FeatureClockAudit className="h-40 w-40" />,
   plugs: <FeaturePlugsErp className="h-40 w-40" />,
   layout: <FeatureLayoutDashboard className="h-40 w-40" />,
+  calculator: <FeatureCalculator className="h-40 w-40" />,
+  megaphone: <FeatureMegaphone className="h-40 w-40" />,
+  handshake: <FeatureHandshake className="h-40 w-40" />,
+  gear: <FeatureGear className="h-40 w-40" />,
+  headset: <FeatureHeadset className="h-40 w-40" />,
+  users: <FeatureUsers className="h-40 w-40" />,
+  shield: <FeatureShield className="h-40 w-40" />,
 };
 
 export function Features({ content }: { content: FeaturesContent }) {
