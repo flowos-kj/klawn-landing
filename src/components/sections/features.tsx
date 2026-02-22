@@ -57,8 +57,6 @@ export function Features({ content }: { content: FeaturesContent }) {
               description={feature.description}
               bullets={feature.bullets}
               icon={ICON_MAP[feature.iconKey]}
-              wide={feature.large}
-              className={feature.large ? "md:col-span-2" : ""}
             />
           ))}
         </BentoGrid>

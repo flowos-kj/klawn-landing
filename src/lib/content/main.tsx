@@ -46,7 +46,7 @@ const content: PageContent = {
           "LLM 전달 전 자동 마스킹",
           "응답 시 원본 복원",
         ],
-        large: true,
+        large: false,
         iconKey: "fingerprint",
       },
       {
@@ -91,7 +91,7 @@ const content: PageContent = {
           "감사 로그 및 무결성 검증",
           "보안 감사 결과 확인",
         ],
-        large: true,
+        large: false,
         iconKey: "layout",
       },
     ],
