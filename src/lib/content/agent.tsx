@@ -183,10 +183,10 @@ const content: PageContent = {
     onboarding: "24시간 온보딩",
     onboardingDetail: "전담 엔지니어가 직접 방문하여 설치부터 PoC까지",
     expenseNote: "실비 별도",
-    promoLabel: "첫 월 50% 지원",
-    promoPrice: "₩539,220",
+    promoLabel: "첫 달 무료",
+    promoPrice: "₩0",
     referralLabel: "소개-계약 시 혜택",
-    referralDetail: "3개월간 월 50% 할인",
+    referralDetail: "첫 달 무료 추가 제공",
     ctaLabel: "PoC 문의하기",
     ctaHref: "mailto:anton@flowos.work",
   },
@@ -221,7 +221,7 @@ const content: PageContent = {
   cta: {
     heading: "ChatGPT 대신, Klawn으로 시작하세요",
     subheading:
-      "PoC부터 프로덕션까지. 첫 달 50% 할인으로 바로 시작할 수 있습니다.",
+      "PoC부터 프로덕션까지. 첫 달 무료로 바로 시작할 수 있습니다.",
     ctaLabel: "anton@flowos.work",
     ctaHref: "mailto:anton@flowos.work",
   },

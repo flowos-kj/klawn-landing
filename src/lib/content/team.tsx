@@ -2,7 +2,7 @@ import type { PageContent } from "./types";
 
 const content: PageContent = {
   hero: {
-    headline: "월 108만원으로 채용하는",
+    headline: "최저임금 절반으로 채용하는",
     subheadline: "AI 직원",
     body: (
       <>
@@ -147,7 +147,7 @@ const content: PageContent = {
   comparison: {
     heading: "직원 채용 vs Klawn 채용",
     subheading:
-      "절반의 비용, 전혀 다른 결과. Klawn이 더 나은 선택인 이유.",
+      "최저임금 절반의 비용, 전혀 다른 결과. Klawn이 더 나은 선택인 이유.",
     leftLabel: "직원 채용",
     rightLabel: "Klawn 채용",
     rows: [
@@ -182,10 +182,10 @@ const content: PageContent = {
     ],
   },
   pricing: {
-    badge: "월 108만원 AI 직원",
-    heading: "사람 절반 비용으로, AI 직원을 채용하세요",
+    badge: "최저임금 절반 AI 직원",
+    heading: "최저임금 절반으로, AI 직원을 채용하세요",
     subheading:
-      "추가 비용 없이, 24시간 일하는 직원을 얻습니다.",
+      "최저임금의 절반 비용으로, 24시간 일하는 직원을 얻습니다.",
     monthlyWage: "₩1,078,440",
     monthlyWageNumber: "월급",
     setupNote: "설치비 포함",
@@ -199,10 +199,10 @@ const content: PageContent = {
     onboarding: "24시간 온보딩",
     onboardingDetail: "전담 엔지니어가 직접 방문하여 설치부터 교육까지",
     expenseNote: "실비 별도",
-    promoLabel: "첫 월급 50% 지원",
-    promoPrice: "₩539,220",
+    promoLabel: "첫 달 무료",
+    promoPrice: "₩0",
     referralLabel: "소개-계약 시 혜택",
-    referralDetail: "3개월간 월급 50% 할인",
+    referralDetail: "첫 달 무료 추가 제공",
     ctaLabel: "채용 문의하기",
     ctaHref: "mailto:anton@flowos.work",
   },
@@ -237,7 +237,7 @@ const content: PageContent = {
   cta: {
     heading: "지금 Klawn을 채용하세요",
     subheading:
-      "첫 달 50% 할인. 24시간 안에 팀에 합류합니다.",
+      "첫 달 무료. 24시간 안에 팀에 합류합니다.",
     ctaLabel: "anton@flowos.work",
     ctaHref: "mailto:anton@flowos.work",
   },

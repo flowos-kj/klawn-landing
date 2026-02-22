@@ -90,11 +90,11 @@ export function Pricing({ content }: { content: PricingContent }) {
                     {content.promoLabel}
                   </div>
                   <div className="mt-1 text-sm text-white/60">
-                    첫 달{" "}
+                    첫 달은{" "}
                     <span className="font-semibold text-white">
-                      {content.promoPrice}
+                      무료
                     </span>
-                    으로 시작하세요
+                    로 시작하세요
                   </div>
                 </div>
               </div>
