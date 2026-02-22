@@ -1,20 +1,16 @@
 "use client";
 
 import {
-  Cube,
-  ShareNetwork,
-  Cloud,
-  Buildings,
-  Wrench,
-} from "@phosphor-icons/react";
+  DeployCubeDocker,
+  DeployNetworkK8s,
+  DeployCloudAws,
+} from "@/components/svg-animations";
 import type { DeploymentContent } from "@/lib/content/types";
 
 const ICON_MAP: Record<string, React.ReactNode> = {
-  cube: <Cube weight="thin" className="h-6 w-6 text-copper" />,
-  network: <ShareNetwork weight="thin" className="h-6 w-6 text-copper" />,
-  cloud: <Cloud weight="thin" className="h-6 w-6 text-copper" />,
-  building: <Buildings weight="thin" className="h-6 w-6 text-copper" />,
-  wrench: <Wrench weight="thin" className="h-6 w-6 text-copper" />,
+  cube: <DeployCubeDocker className="h-28 w-28" />,
+  network: <DeployNetworkK8s className="h-28 w-28" />,
+  cloud: <DeployCloudAws className="h-28 w-28" />,
 };
 
 export function Deployment({ content }: { content: DeploymentContent }) {
@@ -32,18 +28,18 @@ export function Deployment({ content }: { content: DeploymentContent }) {
           {content.options.map((opt) => (
             <div
               key={opt.title}
-              className="rounded-xl border border-border bg-white p-4 sm:p-6"
+              className="flex flex-col items-center rounded-xl border border-border bg-white p-5 sm:p-6"
             >
-              <div className="mb-3 sm:mb-4">
+              <div className="mb-4">
                 {ICON_MAP[opt.iconKey]}
               </div>
-              <h3 className="mb-2 text-base font-semibold text-navy-dark sm:text-lg">
+              <h3 className="mb-2 text-center text-base font-semibold text-navy-dark sm:text-lg">
                 {opt.title}
               </h3>
-              <p className="mb-3 text-xs text-muted sm:mb-4 sm:text-sm">
+              <p className="mb-3 text-center text-xs text-muted sm:mb-4 sm:text-sm">
                 {opt.description}
               </p>
-              <code className="block overflow-x-auto rounded-lg bg-navy-dark px-3 py-2 font-mono text-[10px] text-white/80 sm:px-4 sm:py-2.5 sm:text-xs">
+              <code className="mt-auto block w-full overflow-x-auto rounded-lg bg-navy-dark px-3 py-2 text-center font-mono text-[10px] text-white/80 sm:px-4 sm:py-2.5 sm:text-xs">
                 {opt.command}
               </code>
             </div>

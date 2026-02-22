@@ -1,6 +1,10 @@
 "use client";
 
 import { ShieldCheck, Scales, Eye } from "@phosphor-icons/react";
+import {
+  SecurityEyeMasking,
+  SecurityShieldRbac,
+} from "@/components/svg-animations";
 import { PII_DEMO, RBAC_TIERS } from "@/lib/constants";
 import type { SecurityContent } from "@/lib/content/types";
 
@@ -20,13 +24,17 @@ export function Security({ content }: { content: SecurityContent }) {
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
           {/* PII masking demo */}
           <div className="rounded-xl border border-border bg-surface p-4 sm:p-6">
-            <div className="mb-4 flex items-center gap-2">
-              <Eye weight="thin" className="h-5 w-5 text-copper" />
-              <h3 className="font-semibold text-navy-dark">PII 마스킹</h3>
+            <div className="mb-5 flex flex-col items-center gap-3 sm:flex-row sm:items-start sm:gap-4">
+              <SecurityEyeMasking className="h-28 w-28 shrink-0" />
+              <div>
+                <h3 className="text-center text-lg font-semibold text-navy-dark sm:text-left">
+                  PII 마스킹
+                </h3>
+                <p className="mt-1 text-center text-xs text-muted sm:text-left sm:text-sm">
+                  LLM에 전달되기 전 자동 마스킹, 응답 시 복원
+                </p>
+              </div>
             </div>
-            <p className="mb-4 text-xs text-muted sm:text-sm">
-              LLM에 전달되기 전 자동 마스킹, 응답 시 복원
-            </p>
             <div className="space-y-3 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
               <div>
                 <div className="mb-2 text-[10px] font-medium uppercase tracking-wider text-muted sm:text-xs">
@@ -49,13 +57,17 @@ export function Security({ content }: { content: SecurityContent }) {
 
           {/* RBAC tiers */}
           <div className="rounded-xl border border-border bg-surface p-4 sm:p-6">
-            <div className="mb-4 flex items-center gap-2">
-              <ShieldCheck weight="thin" className="h-5 w-5 text-copper" />
-              <h3 className="font-semibold text-navy-dark">6단계 접근 제어</h3>
+            <div className="mb-5 flex flex-col items-center gap-3 sm:flex-row sm:items-start sm:gap-4">
+              <SecurityShieldRbac className="h-28 w-28 shrink-0" />
+              <div>
+                <h3 className="text-center text-lg font-semibold text-navy-dark sm:text-left">
+                  6단계 접근 제어
+                </h3>
+                <p className="mt-1 text-center text-xs text-muted sm:text-left sm:text-sm">
+                  RBAC + ABAC + SSO. 도구별 실행 권한과 데이터 분류 등급 관리.
+                </p>
+              </div>
             </div>
-            <p className="mb-4 text-xs text-muted sm:text-sm">
-              RBAC + ABAC + SSO. 도구별 실행 권한과 데이터 분류 등급 관리.
-            </p>
             <div className="space-y-2">
               {rbacLabels.map((tier, idx) => (
                 <div key={tier} className="flex items-center gap-2 sm:gap-3">

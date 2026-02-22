@@ -1,0 +1,97 @@
+export function FeatureBrainAi(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style dangerouslySetInnerHTML={{__html: `
+    .fba_bg {
+      fill: #F0F1F5;
+    }
+    .fba_inner-border {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 2;
+    }
+    .fba_path {
+      fill: none;
+      stroke: #2D3561;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.8;
+    }
+    .fba_pulse {
+      fill: none;
+      stroke: #D49B72;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 6 100;
+      animation: travel 3s linear infinite;
+    }
+    .fba_p1 { animation-delay: 0s; }
+    .fba_p2 { animation-delay: -1s; }
+    .fba_p3 { animation-delay: -2s; }
+    
+    @keyframes travel {
+      0% { stroke-dashoffset: 6; }
+      100% { stroke-dashoffset: -100; }
+    }
+    
+    .fba_node {
+      fill: #C4875B;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: nodePulse 3s ease-in-out infinite;
+    }
+    .fba_node-core {
+      fill: #A87049;
+    }
+    .fba_n1 { animation-delay: 0s; }
+    .fba_n2 { animation-delay: -0.5s; }
+    .fba_n3 { animation-delay: -1s; }
+    .fba_n4 { animation-delay: -1.5s; }
+    .fba_n5 { animation-delay: -2s; }
+    .fba_n6 { animation-delay: -2.5s; }
+
+    @keyframes nodePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.8; }
+    }
+  `}} />
+
+  {/* Background */}
+  <rect x="6" y="6" width="108" height="108" rx="28" className="fba_bg" />
+  <rect x="6" y="6" width="108" height="108" rx="28" className="fba_inner-border" />
+
+  {/* Base Connection Lines */}
+  <g className="fba_path">
+    <path d="M 60,95 C 40,90 30,85 30,75 C 20,65 15,55 20,50 C 25,35 30,30 35,30 C 45,25 55,25 60,25" />
+    <path d="M 60,95 C 80,90 90,85 90,75 C 100,65 105,55 100,50 C 95,35 90,30 85,30 C 75,25 65,25 60,25" />
+    <path d="M 60,95 C 50,80 45,70 45,60 C 45,50 50,45 60,45 C 50,35 40,35 35,30" />
+    <path d="M 60,95 C 70,80 75,70 75,60 C 75,50 70,45 60,45 C 70,35 80,35 85,30" />
+    <path d="M 30,75 C 40,70 40,65 45,60" />
+    <path d="M 90,75 C 80,70 80,65 75,60" />
+    <path d="M 20,50 C 35,55 40,55 45,60" />
+    <path d="M 100,50 C 85,55 80,55 75,60" />
+    <path d="M 45,60 C 50,60 55,60 60,45" />
+    <path d="M 75,60 C 70,60 65,60 60,45" />
+  </g>
+
+  {/* Animated Pulses */}
+  <path className="fba_pulse fba_p1" pathLength="100" d="M 60,95 C 40,90 30,85 30,75 C 20,65 15,55 20,50 C 25,35 30,30 35,30 C 45,25 55,25 60,25" />
+  <path className="fba_pulse fba_p2" pathLength="100" d="M 60,95 C 70,80 75,70 75,60 C 75,50 70,45 60,45 C 70,35 80,35 85,30" />
+  <path className="fba_pulse fba_p3" pathLength="100" d="M 20,50 C 35,55 40,55 45,60 C 50,60 55,60 60,45 C 65,60 70,60 75,60 C 80,55 85,55 100,50" />
+
+  {/* Nodes */}
+  <circle cx="60" cy="95" r="4" className="fba_node fba_node-core fba_n1" />
+  <circle cx="60" cy="25" r="3.5" className="fba_node fba_n2" />
+  <circle cx="30" cy="75" r="3.5" className="fba_node fba_n3" />
+  <circle cx="90" cy="75" r="3.5" className="fba_node fba_n4" />
+  <circle cx="20" cy="50" r="3" className="fba_node fba_n5" />
+  <circle cx="100" cy="50" r="3" className="fba_node fba_n6" />
+  <circle cx="35" cy="30" r="3.5" className="fba_node fba_n1" />
+  <circle cx="85" cy="30" r="3.5" className="fba_node fba_n2" />
+  <circle cx="45" cy="60" r="3.5" className="fba_node fba_n3" />
+  <circle cx="75" cy="60" r="3.5" className="fba_node fba_n4" />
+  <circle cx="60" cy="45" r="4.5" className="fba_node fba_node-core fba_n5" />
+</svg>
+  );
+}

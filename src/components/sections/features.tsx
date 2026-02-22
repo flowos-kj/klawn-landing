@@ -1,49 +1,40 @@
 "use client";
 
 import {
-  Brain,
-  Fingerprint,
-  LockKey,
-  ClockCounterClockwise,
-  Plugs,
-  Layout,
-  Calculator,
-  Megaphone,
-  Handshake,
-  Gear,
-  Headset,
-  UsersThree,
-  ShieldCheck,
-} from "@phosphor-icons/react";
+  FeatureBrainAi,
+  FeatureFingerprintPii,
+  FeatureLockAccess,
+  FeatureClockAudit,
+  FeaturePlugsErp,
+  FeatureLayoutDashboard,
+  KlawnCrab,
+} from "@/components/svg-animations";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import type { FeaturesContent } from "@/lib/content/types";
 
 const ICON_MAP: Record<string, React.ReactNode> = {
-  brain: <Brain weight="thin" className="h-7 w-7 text-copper" />,
-  fingerprint: <Fingerprint weight="thin" className="h-7 w-7 text-copper" />,
-  lock: <LockKey weight="thin" className="h-7 w-7 text-copper" />,
-  clock: <ClockCounterClockwise weight="thin" className="h-7 w-7 text-copper" />,
-  plugs: <Plugs weight="thin" className="h-7 w-7 text-copper" />,
-  layout: <Layout weight="thin" className="h-7 w-7 text-copper" />,
-  calculator: <Calculator weight="thin" className="h-7 w-7 text-copper" />,
-  megaphone: <Megaphone weight="thin" className="h-7 w-7 text-copper" />,
-  handshake: <Handshake weight="thin" className="h-7 w-7 text-copper" />,
-  gear: <Gear weight="thin" className="h-7 w-7 text-copper" />,
-  headset: <Headset weight="thin" className="h-7 w-7 text-copper" />,
-  users: <UsersThree weight="thin" className="h-7 w-7 text-copper" />,
-  shield: <ShieldCheck weight="thin" className="h-7 w-7 text-copper" />,
+  brain: <FeatureBrainAi className="h-40 w-40" />,
+  fingerprint: <FeatureFingerprintPii className="h-40 w-40" />,
+  lock: <FeatureLockAccess className="h-40 w-40" />,
+  clock: <FeatureClockAudit className="h-40 w-40" />,
+  plugs: <FeaturePlugsErp className="h-40 w-40" />,
+  layout: <FeatureLayoutDashboard className="h-40 w-40" />,
 };
 
 export function Features({ content }: { content: FeaturesContent }) {
   return (
     <section id="features" className="bg-surface py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="mb-4 text-center text-2xl font-bold text-navy-dark sm:text-3xl">
-          {content.heading}
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-muted sm:mb-16 sm:text-base">
-          {content.subheading}
-        </p>
+        {/* Crab mascot + heading */}
+        <div className="mb-12 flex flex-col items-center sm:mb-16">
+          <KlawnCrab className="mb-4 h-24 w-auto sm:h-32" />
+          <h2 className="mb-4 text-center text-2xl font-bold text-navy-dark sm:text-3xl">
+            {content.heading}
+          </h2>
+          <p className="max-w-2xl text-center text-sm text-muted sm:text-base">
+            {content.subheading}
+          </p>
+        </div>
         <BentoGrid>
           {content.items.map((feature) => (
             <BentoGridItem
@@ -52,6 +43,7 @@ export function Features({ content }: { content: FeaturesContent }) {
               description={feature.description}
               bullets={feature.bullets}
               icon={ICON_MAP[feature.iconKey]}
+              wide={feature.large}
               className={feature.large ? "md:col-span-2" : ""}
             />
           ))}

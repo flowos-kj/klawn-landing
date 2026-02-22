@@ -1,0 +1,96 @@
+export function KlawnCrab(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180">
+<defs>
+    <linearGradient id="kc-bodyGrad" x1="0%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%" stopColor="#2D3561" />
+        <stop offset="60%" stopColor="#3D4578" />
+        <stop offset="100%" stopColor="#C4875B" />
+    </linearGradient>
+    <linearGradient id="kc-clawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#2D3561" />
+        <stop offset="70%" stopColor="#3D4578" />
+        <stop offset="100%" stopColor="#A87049" />
+    </linearGradient>
+    <linearGradient id="kc-bellyGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" stopColor="#3D4578" />
+        <stop offset="100%" stopColor="#C4875B" />
+    </linearGradient>
+</defs>
+<style dangerouslySetInnerHTML={{__html: `
+    @keyframes breathe {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+    @keyframes waveLeft {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(15deg); }
+    }
+    @keyframes waveRight {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-15deg); }
+    }
+    @keyframes blink {
+        0%, 47%, 53%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(0.1); }
+    }
+    .kc_crab-wrapper {
+        animation: breathe 4s infinite ease-in-out;
+        transform-origin: 100px 140px;
+    }
+    .kc_claw-l {
+        animation: waveLeft 3s infinite ease-in-out;
+        transform-origin: 30px 65px;
+    }
+    .kc_claw-r {
+        animation: waveRight 3s infinite ease-in-out;
+        animation-delay: -1.5s;
+        transform-origin: 170px 65px;
+    }
+    .kc_eye-l {
+        animation: blink 4s infinite linear;
+        transform-origin: 75px 85px;
+    }
+    .kc_eye-r {
+        animation: blink 4s infinite linear;
+        transform-origin: 125px 85px;
+    }
+`}} />
+
+<g className="kc_crab-wrapper">
+    {/* Legs */}
+    <path d="M 46 112 L 26 137 A 6 6 0 0 0 36 143 L 56 118 Z" fill="#1E2249" />
+    <path d="M 64 113 L 54 143 A 6 6 0 0 0 66 147 L 76 117 Z" fill="#1E2249" />
+    <path d="M 136 113 L 146 143 A 6 6 0 0 1 134 147 L 124 117 Z" fill="#1E2249" />
+    <path d="M 154 112 L 174 137 A 6 6 0 0 1 164 143 L 144 118 Z" fill="#1E2249" />
+
+    {/* Arms */}
+    <path d="M 45 100 C 20 100, 15 80, 30 65 C 35 80, 40 85, 50 90 Z" fill="#2D3561" />
+    <path d="M 155 100 C 180 100, 185 80, 170 65 C 165 80, 160 85, 150 90 Z" fill="#2D3561" />
+
+    {/* Left Claw */}
+    <g className="kc_claw-l">
+        <path d="M 30 65 C 10 55, 0 30, 20 20 C 35 10, 45 30, 30 40 C 20 50, 20 55, 30 65 Z" fill="url(#kc-clawGrad)" />
+        <path d="M 30 65 C 40 55, 50 40, 40 25 C 30 10, 20 25, 30 40 C 35 50, 35 55, 30 65 Z" fill="url(#kc-clawGrad)" />
+    </g>
+
+    {/* Right Claw */}
+    <g className="kc_claw-r">
+        <path d="M 170 65 C 190 55, 200 30, 180 20 C 165 10, 155 30, 170 40 C 180 50, 180 55, 170 65 Z" fill="url(#kc-clawGrad)" />
+        <path d="M 170 65 C 160 55, 150 40, 160 25 C 170 10, 180 25, 170 40 C 165 50, 165 55, 170 65 Z" fill="url(#kc-clawGrad)" />
+    </g>
+
+    {/* Main Body Dome */}
+    <path d="M 35 125 C 35 45, 165 45, 165 125 Z" fill="url(#kc-bodyGrad)" />
+
+    {/* Belly Area */}
+    <path d="M 60 125 C 60 100, 140 100, 140 125 Z" fill="url(#kc-bellyGrad)" />
+
+    {/* Face */}
+    <circle className="kc_eye-l" cx="75" cy="85" r="5" fill="#1E2249" />
+    <circle className="kc_eye-r" cx="125" cy="85" r="5" fill="#1E2249" />
+    <path d="M 92 98 Q 100 105 108 98 Q 100 101 92 98 Z" fill="#1E2249" />
+</g>
+</svg>
+  );
+}

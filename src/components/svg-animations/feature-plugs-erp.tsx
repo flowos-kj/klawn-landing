@@ -1,0 +1,80 @@
+export function FeaturePlugsErp(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" style={{backgroundColor: "transparent"}}>
+  <style dangerouslySetInnerHTML={{__html: `
+    .fpe_left-plug {
+      animation: slideLeft 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .fpe_right-plug {
+      animation: slideRight 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .fpe_spark {
+      transform-origin: 60px 60px;
+      animation: sparkFlash 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .fpe_wave {
+      transform-origin: 60px 60px;
+      animation: wavePulse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes slideLeft {
+      0% { transform: translateX(0); }
+      33.33% { transform: translateX(11px); }
+      66.66% { transform: translateX(11px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes slideRight {
+      0% { transform: translateX(0); }
+      33.33% { transform: translateX(-11px); }
+      66.66% { transform: translateX(-11px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes sparkFlash {
+      0%, 31% { opacity: 0; transform: scale(0.5) rotate(-15deg); }
+      33.33% { opacity: 1; transform: scale(1.1) rotate(0deg); }
+      36% { opacity: 1; transform: scale(1) rotate(0deg); }
+      63% { opacity: 1; transform: scale(1) rotate(0deg); }
+      66.66%, 100% { opacity: 0; transform: scale(0.5) rotate(15deg); }
+    }
+
+    @keyframes wavePulse {
+      0%, 33.33% { opacity: 0; transform: scale(0.8); }
+      45% { opacity: 0.8; transform: scale(1.2); }
+      60% { opacity: 0; transform: scale(1.6); }
+      100% { opacity: 0; }
+    }
+  `}} />
+
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#F0F1F5" strokeWidth="1.5" />
+  <circle cx="60" cy="60" r="32" fill="none" stroke="#F0F1F5" strokeWidth="1.5" strokeDasharray="4 4" />
+
+  <g className="fpe_left-plug">
+    <line x1="-20" y1="60" x2="16" y2="60" stroke="#1E2249" strokeWidth="2" />
+    <path d="M42 52 h6 a1 1 0 0 1 1 1 v4 a1 1 0 0 1 -1 1 h-6 z m0 10 h6 a1 1 0 0 1 1 1 v4 a1 1 0 0 1 -1 1 h-6 z" fill="#3D4578" stroke="#1E2249" strokeWidth="1.5" strokeLinejoin="round" />
+    <rect x="16" y="46" width="26" height="28" rx="4" fill="#2D3561" stroke="#1E2249" strokeWidth="1.5" />
+    <line x1="24" y1="52" x2="24" y2="68" stroke="#3D4578" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="32" cy="60" r="2" fill="#3D4578" />
+  </g>
+
+  <g className="fpe_right-plug">
+    <line x1="104" y1="60" x2="140" y2="60" stroke="#A87049" strokeWidth="2" />
+    <path d="M78 51 h-6 a1 1 0 0 0 -1 1 v6 a1 1 0 0 0 1 1 h6 z m0 10 h-6 a1 1 0 0 0 -1 1 v6 a1 1 0 0 0 1 1 h6 z" fill="#F0F1F5" stroke="#A87049" strokeWidth="1.5" strokeLinejoin="round" />
+    <rect x="78" y="44" width="26" height="32" rx="4" fill="#C4875B" stroke="#A87049" strokeWidth="1.5" />
+    <line x1="96" y1="52" x2="96" y2="68" stroke="#D49B72" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="88" cy="60" r="2" fill="#D49B72" />
+  </g>
+
+  <g className="fpe_wave">
+    <circle cx="60" cy="60" r="18" fill="none" stroke="#D49B72" strokeWidth="1" />
+  </g>
+
+  <g className="fpe_spark">
+    <circle cx="60" cy="60" r="14" fill="#F0F1F5" stroke="#D49B72" strokeWidth="1.5" />
+    <path d="M60 38 v-4 M60 86 v-4 M38 60 h-4 M86 60 h-4 M44 44 l-3 -3 M76 76 l3 3 M44 76 l-3 3 M76 44 l3 -3" stroke="#D49B72" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M62 52 l-4 8 h4 l-2 8 l6 -10 h-4 z" fill="#FFFFFF" stroke="#D49B72" strokeWidth="1.5" strokeLinejoin="round" />
+  </g>
+</svg>
+  );
+}

@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/hero";
 import { CorporateLogos } from "@/components/sections/corporate-logos";
 import { TrustBar } from "@/components/sections/trust-bar";
 import { Features } from "@/components/sections/features";
+import { PlatformVisual } from "@/components/sections/platform-visual";
 import { Security } from "@/components/sections/security";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Comparison } from "@/components/sections/comparison";
@@ -21,6 +22,7 @@ export default function TeamPage() {
         <CorporateLogos />
         <TrustBar items={content.trustItems} />
         <Features content={content.features} />
+        <PlatformVisual />
         <Security content={content.security} />
         <HowItWorks content={content.howItWorks} />
         <Comparison content={content.comparison} />
