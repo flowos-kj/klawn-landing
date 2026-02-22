@@ -88,7 +88,15 @@ export interface FeaturesContent extends SectionHeader {
   items: FeatureItem[];
 }
 
+export interface SkillsShowcaseContent {
+  heading: string;
+  subheading: string;
+  description: string;
+  autoGenDescription: string;
+}
+
 export interface PageContent {
+  skillsShowcase: SkillsShowcaseContent;
   hero: HeroContent;
   trustItems: TrustItem[];
   features: FeaturesContent;

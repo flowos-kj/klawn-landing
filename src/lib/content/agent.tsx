@@ -96,6 +96,15 @@ const content: PageContent = {
       },
     ],
   },
+  skillsShowcase: {
+    heading: "2,200+ 스킬 — ChatGPT에는 없습니다",
+    subheading:
+      "Klawn automatically leverages 2,200+ skills to solve problems, and when existing skills fall short, it auto-generates new ones on the spot.",
+    description:
+      "2,200개 이상의 사전 구축 스킬이 에이전트 루프 안에서 자동 실행됩니다. 도구 호출, API 연동, 데이터 파이프라인까지 — ChatGPT의 플러그인과는 차원이 다릅니다.",
+    autoGenDescription:
+      "기존 스킬로 해결 불가능한 문제를 만나면, 에이전트가 즉석에서 새로운 스킬을 코드로 생성합니다. 생성된 스킬은 자동으로 등록되어 다음부터 재사용됩니다.",
+  },
   security: {
     heading: "엔터프라이즈 보안, ChatGPT에는 없습니다",
     subheading:
