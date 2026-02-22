@@ -14,6 +14,15 @@ import {
   FeatureHeadset,
   FeatureUsers,
   FeatureShield,
+  FeatureSsrfGuard,
+  FeatureShellGuard,
+  FeatureSymlinkGuard,
+  FeatureFetchLimit,
+  FeatureScheduler,
+  FeatureCredentialRotation,
+  FeatureNestedAgents,
+  FeatureKoreanMemory,
+  FeatureSession,
   KlawnCrab,
 } from "@/components/svg-animations";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
@@ -33,6 +42,15 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   headset: <FeatureHeadset className="h-40 w-40" />,
   users: <FeatureUsers className="h-40 w-40" />,
   shield: <FeatureShield className="h-40 w-40" />,
+  ssrf: <FeatureSsrfGuard className="h-40 w-40" />,
+  shell: <FeatureShellGuard className="h-40 w-40" />,
+  symlink: <FeatureSymlinkGuard className="h-40 w-40" />,
+  fetch: <FeatureFetchLimit className="h-40 w-40" />,
+  scheduler: <FeatureScheduler className="h-40 w-40" />,
+  credential: <FeatureCredentialRotation className="h-40 w-40" />,
+  nested: <FeatureNestedAgents className="h-40 w-40" />,
+  memory: <FeatureKoreanMemory className="h-40 w-40" />,
+  session: <FeatureSession className="h-40 w-40" />,
 };
 
 export function Features({ content }: { content: FeaturesContent }) {

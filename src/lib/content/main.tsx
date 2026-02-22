@@ -23,7 +23,7 @@ const content: PageContent = {
   features: {
     heading: "핵심 기능",
     subheading:
-      "에이전트부터 감사 추적까지. 엔터프라이즈에 필요한 모든 것을 갖추고 있습니다.",
+      "에이전트부터 보안 가드, 스케줄링, 메모리까지. 엔터프라이즈에 필요한 모든 것을 갖추고 있습니다.",
     items: [
       {
         title: "AI 에이전트",
@@ -93,6 +93,114 @@ const content: PageContent = {
         ],
         large: false,
         iconKey: "layout",
+      },
+      {
+        title: "SSRF 가드",
+        description: "사설 IP·루프백·DNS 리바인딩 자동 차단",
+        bullets: [
+          "사설 IP 및 루프백 주소 차단",
+          "우회 IP 표기법 자동 탐지",
+          "DNS 리바인딩 공격 방어",
+          "웹 검색 도구에 자동 적용",
+        ],
+        large: false,
+        iconKey: "ssrf",
+      },
+      {
+        title: "Shell 가드",
+        description: "위험 환경 변수 자동 제거 후 셸 실행",
+        bullets: [
+          "코드 삽입 위험 변수 자동 제거",
+          "라이브러리 주입 경로 차단",
+          "런타임 옵션 변조 방지",
+          "안전한 셸 실행 환경 보장",
+        ],
+        large: false,
+        iconKey: "shell",
+      },
+      {
+        title: "심링크 쓰기 가드",
+        description: "파일 쓰기 전 경로 검증으로 탈출 차단",
+        bullets: [
+          "심볼릭 링크 경로 자동 검증",
+          "레이스 컨디션 방어",
+          "경로 탈출 시도 차단",
+          "실제 경로 확인 후 쓰기 허용",
+        ],
+        large: false,
+        iconKey: "symlink",
+      },
+      {
+        title: "Fetch 크기 제한",
+        description: "응답 크기 제한으로 메모리 폭주 차단",
+        bullets: [
+          "응답 본문 크기 하드 리밋",
+          "스트리밍 바이트 실시간 카운팅",
+          "초과 시 즉시 연결 종료",
+          "메모리 폭주 원천 차단",
+        ],
+        large: false,
+        iconKey: "fetch",
+      },
+      {
+        title: "스케줄러",
+        description: "반복·예약 태스크 자동 실행 및 재시도",
+        bullets: [
+          "동시 실행 수 제어",
+          "근무 시간 및 타임존 제한",
+          "실패 시 지수 백오프 재시도",
+          "웹훅 알림",
+        ],
+        large: false,
+        iconKey: "scheduler",
+      },
+      {
+        title: "크리덴셜 로테이션",
+        description: "복수 API 키 자동 분배 및 쿨다운",
+        bullets: [
+          "복수 API 키 자동 분배",
+          "레이트 리밋 시 자동 쿨다운",
+          "가장 빠른 복구 키 자동 선택",
+          "라운드로빈·LRU 전략 지원",
+        ],
+        large: false,
+        iconKey: "credential",
+      },
+      {
+        title: "중첩 서브 에이전트",
+        description: "에이전트가 하위 에이전트를 자동 생성",
+        bullets: [
+          "최대 깊이 및 자식 수 제어",
+          "필요한 도구만 선택 전달",
+          "계층적 태스크 위임",
+          "복잡한 작업 자동 분할",
+        ],
+        large: false,
+        iconKey: "nested",
+      },
+      {
+        title: "한국어 메모리 검색",
+        description: "조사 제거 + 벡터 검색으로 정확한 한국어 매칭",
+        bullets: [
+          "한국어 특화 키워드 검색",
+          "조사 자동 제거 토크나이저",
+          "벡터 스토어 기반 유사도 검색",
+          "세션 간 영속 메모리",
+        ],
+        large: false,
+        iconKey: "memory",
+      },
+      {
+        title: "세션 관리",
+        description: "JSONL 기반 세션 저장·복원·검색",
+        bullets: [
+          "전체 대화 이력 JSONL 저장",
+          "중단 지점 체크포인팅 복원",
+          "세션 내 한국어 검색",
+          "크로스 세션 컨텍스트 유지",
+        ],
+        large: false,
+        iconKey: "session",
       },
     ],
   },
