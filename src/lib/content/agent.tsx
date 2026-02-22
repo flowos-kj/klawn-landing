@@ -170,7 +170,7 @@ const content: PageContent = {
     heading: "ChatGPT Enterprise보다 합리적입니다",
     subheading:
       "사용자당 과금 없이, 월 정액제로 엔터프라이즈 AI 에이전트를 운영하세요.",
-    monthlyWage: "₩2,156,880",
+    monthlyWage: "₩1,078,440",
     monthlyWageNumber: "월 정액",
     setupNote: "설치비 포함",
     benefits: [
@@ -184,7 +184,7 @@ const content: PageContent = {
     onboardingDetail: "전담 엔지니어가 직접 방문하여 설치부터 PoC까지",
     expenseNote: "실비 별도",
     promoLabel: "첫 월 50% 지원",
-    promoPrice: "₩1,078,440",
+    promoPrice: "₩539,220",
     referralLabel: "소개-계약 시 혜택",
     referralDetail: "3개월간 월 50% 할인",
     ctaLabel: "PoC 문의하기",

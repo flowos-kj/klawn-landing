@@ -159,9 +159,9 @@ const content: PageContent = {
   },
   pricing: {
     badge: "투명한 가격",
-    heading: "AI 직원, 최저임금으로 채용하세요",
-    subheading: "2025년 최저임금 기준. 사람보다 저렴하고, 사람보다 빠릅니다.",
-    monthlyWage: "₩2,156,880",
+    heading: "AI 직원, 월 108만원으로 채용하세요",
+    subheading: "사람보다 저렴하고, 사람보다 빠릅니다.",
+    monthlyWage: "₩1,078,440",
     monthlyWageNumber: "월급",
     setupNote: "설치비 포함",
     benefits: [
@@ -175,7 +175,7 @@ const content: PageContent = {
     onboardingDetail: "전담 엔지니어가 직접 방문하여 설치부터 컨설팅까지",
     expenseNote: "실비 별도",
     promoLabel: "첫 월급 50% 지원",
-    promoPrice: "₩1,078,440",
+    promoPrice: "₩539,220",
     referralLabel: "소개-계약 시 혜택",
     referralDetail: "3개월간 월급 50% 할인",
     ctaLabel: "도입 문의하기",

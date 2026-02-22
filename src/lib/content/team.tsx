@@ -2,13 +2,13 @@ import type { PageContent } from "./types";
 
 const content: PageContent = {
   hero: {
-    headline: "최저임금으로 채용하는",
+    headline: "월 108만원으로 채용하는",
     subheadline: "AI 직원",
     body: (
       <>
         잠 안 자고, 불평 안 하고, 모든 걸 기억합니다.
         <br />
-        4대보험도 필요 없습니다 — 월 216만원이면 충분합니다.
+        4대보험도 필요 없습니다 — 월 108만원이면 충분합니다.
       </>
     ),
     ctaLabel: "채용 문의하기",
@@ -147,14 +147,14 @@ const content: PageContent = {
   comparison: {
     heading: "직원 채용 vs Klawn 채용",
     subheading:
-      "같은 최저임금, 전혀 다른 결과. Klawn이 더 나은 선택인 이유.",
+      "절반의 비용, 전혀 다른 결과. Klawn이 더 나은 선택인 이유.",
     leftLabel: "직원 채용",
     rightLabel: "Klawn 채용",
     rows: [
       {
         feature: "월급",
         left: "₩2,156,880 + 4대보험",
-        right: "₩2,156,880 (전부)",
+        right: "₩1,078,440 (전부)",
       },
       { feature: "근무 시간", left: "9시 - 6시", right: "24시간 365일" },
       { feature: "불만/이직", left: "있음", right: "없음" },
@@ -182,11 +182,11 @@ const content: PageContent = {
     ],
   },
   pricing: {
-    badge: "최저임금 AI 직원",
-    heading: "사람 한 명 뽑는 비용으로, AI 직원을 채용하세요",
+    badge: "월 108만원 AI 직원",
+    heading: "사람 절반 비용으로, AI 직원을 채용하세요",
     subheading:
-      "2025년 최저임금 기준. 추가 비용 없이, 24시간 일하는 직원을 얻습니다.",
-    monthlyWage: "₩2,156,880",
+      "추가 비용 없이, 24시간 일하는 직원을 얻습니다.",
+    monthlyWage: "₩1,078,440",
     monthlyWageNumber: "월급",
     setupNote: "설치비 포함",
     benefits: [
@@ -200,7 +200,7 @@ const content: PageContent = {
     onboardingDetail: "전담 엔지니어가 직접 방문하여 설치부터 교육까지",
     expenseNote: "실비 별도",
     promoLabel: "첫 월급 50% 지원",
-    promoPrice: "₩1,078,440",
+    promoPrice: "₩539,220",
     referralLabel: "소개-계약 시 혜택",
     referralDetail: "3개월간 월급 50% 할인",
     ctaLabel: "채용 문의하기",
