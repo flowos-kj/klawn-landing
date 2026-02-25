@@ -51,18 +51,18 @@ export function FloatingNav({ navItems, className, cta }: FloatingNavProps) {
         )}
       >
         {/* Main bar */}
-        <nav className="flex items-center gap-6 rounded-full border border-border bg-white/90 px-6 py-3 shadow-lg backdrop-blur-md sm:px-8">
+        <nav className="flex items-center gap-3 rounded-full border border-border bg-white/90 px-4 py-3 shadow-lg backdrop-blur-md sm:px-6 lg:gap-6 lg:px-8">
           <a href="/" className="flex-shrink-0 font-sans text-2xl font-bold text-navy">
             Klawn
           </a>
 
           {/* Desktop nav links */}
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-3 md:flex lg:gap-6">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.link}
-                className="flex items-center gap-1.5 text-sm font-medium text-navy transition-colors hover:text-copper"
+                className="flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-navy transition-colors hover:text-copper"
               >
                 {item.icon}
                 <span>{item.name}</span>

@@ -15,7 +15,7 @@ export function Navbar() {
       cta={
         <a
           href="#cta"
-          className="block rounded-full bg-copper px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-copper-light md:py-1.5"
+          className="block whitespace-nowrap rounded-full bg-copper px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-copper-light md:py-1.5"
         >
           도입 문의하기
         </a>
