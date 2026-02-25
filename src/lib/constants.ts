@@ -1,4 +1,5 @@
 export const NAV_ITEMS = [
+  { name: "활용 사례", link: "#use-cases" },
   { name: "기능", link: "#features" },
   { name: "보안", link: "#security" },
   { name: "배포", link: "#deployment" },
