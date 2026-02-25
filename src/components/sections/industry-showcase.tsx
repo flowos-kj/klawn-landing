@@ -11,7 +11,6 @@ import {
   X,
   FunnelSimple,
   ArrowRight,
-  Play,
 } from "@phosphor-icons/react";
 
 type Industry =
@@ -282,7 +281,7 @@ export function IndustryShowcase() {
 
   return (
     <section id="use-cases" className="bg-surface py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -336,7 +335,7 @@ export function IndustryShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5"
+            className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3"
           >
             {filtered.map((uc, i) => (
               <motion.button
@@ -348,22 +347,16 @@ export function IndustryShowcase() {
                 onClick={() => setSelectedCase(uc)}
                 className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-white text-left shadow-sm transition-all duration-200 hover:border-copper/30 hover:shadow-lg"
               >
-                {/* Static SVG thumbnail — fills entire preview */}
+                {/* Animated SVG — auto-plays and loops */}
                 <div className="relative aspect-[520/593] w-full overflow-hidden bg-white">
                   <object
-                    data={uc.staticPath}
+                    data={uc.svgPath}
                     type="image/svg+xml"
                     className="absolute inset-0 h-full w-full pointer-events-none"
-                    aria-label={`${uc.department} 활용 사례 미리보기`}
+                    aria-label={`${uc.department} 활용 사례 애니메이션`}
                   />
                   {/* Gradient fade at bottom */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
-                  {/* Play indicator */}
-                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/80 shadow-lg backdrop-blur-sm">
-                      <Play weight="fill" className="h-4 w-4 text-white ml-0.5" />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Content */}

@@ -30,7 +30,7 @@ export function SkillsShowcase({
 							<SkillsNetwork className="h-56 w-56 sm:h-64 sm:w-64" />
 						</div>
 						<div className="mb-1 text-lg font-bold text-navy-dark sm:text-xl">
-							2,200+ 스킬 자동 활용
+							2,243 스킬 자동 활용
 						</div>
 						<div className="mb-3 text-sm font-medium text-muted">
 							{content.description}

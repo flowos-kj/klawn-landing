@@ -72,11 +72,12 @@ const content: PageContent = {
         iconKey: "clock",
       },
       {
-        title: "ERP 연동",
-        description: "더존 ERP와 위하고 그룹웨어 직접 연결",
+        title: "ERP · 그룹웨어 · Google Workspace",
+        description: "더존 ERP, 위하고, Google Workspace 직접 연결",
         bullets: [
           "송장 조회 및 전표 생성",
           "결재 목록 및 업무 관리",
+          "Google Drive 업/다운로드 + Gmail 발송",
           "웹훅 기반 실시간 연동",
         ],
         large: false,
@@ -84,15 +85,87 @@ const content: PageContent = {
       },
       {
         title: "관리 대시보드",
-        description: "통합 어드민 대시보드",
+        description: "15개 관리 화면의 통합 어드민 대시보드",
         bullets: [
-          "실시간 세션 및 사용자 관리",
-          "빌링 및 토큰 사용량 추적",
-          "감사 로그 및 무결성 검증",
-          "보안 감사 결과 확인",
+          "세션 · 사용자 · 스킬 · 워크스페이스 관리",
+          "빌링 · 토큰 · 라이선스 추적",
+          "감사 로그 · 보안 · 컴플라이언스",
+          "SSO · 자격 증명 · 워크플로우 설정",
         ],
         large: false,
         iconKey: "layout",
+      },
+      {
+        title: "OpenAI 호환 API 게이트웨이",
+        description: "기존 OpenAI SDK로 즉시 연동",
+        bullets: [
+          "/v1/chat/completions 엔드포인트",
+          "/v1/models, /v1/responses 지원",
+          "OpenAI SDK 코드 변경 없이 전환",
+          "엔터프라이즈 보안 계층 자동 적용",
+        ],
+        large: false,
+        iconKey: "handshake",
+      },
+      {
+        title: "파일 I/O",
+        description: "Excel, PDF, HWP 등 문서 파싱과 생성",
+        bullets: [
+          "Excel, CSV, PDF, HWP/HWPX 파싱",
+          "Excel, CSV, PPTX, PDF, HWPX 생성",
+          "YouTube 자막 추출",
+          "OCR 이미지 텍스트 인식",
+        ],
+        large: false,
+        iconKey: "calculator",
+      },
+      {
+        title: "워크플로우 엔진",
+        description: "결재 게이트와 단계별 자동 실행",
+        bullets: [
+          "결정적 단계 실행기 (step executor)",
+          "승인 게이트 및 $prev 체이닝",
+          "일시정지 · 재개 · 취소 제어",
+          "엔터프라이즈 승인 워크플로우",
+        ],
+        large: false,
+        iconKey: "gear",
+      },
+      {
+        title: "인젝션 탐지",
+        description: "프롬프트 인젝션 및 명령어 삽입 차단",
+        bullets: [
+          "프롬프트 인젝션 실시간 탐지",
+          "악성 명령어 삽입 차단",
+          "도구 승인 게이트 (Tool Approval)",
+          "라이선스 검증 (Ed25519 서명)",
+        ],
+        large: false,
+        iconKey: "shield",
+      },
+      {
+        title: "데이터 유출 탐지",
+        description: "민감 데이터 외부 유출 실시간 차단",
+        bullets: [
+          "LLM 응답 내 민감정보 탐지",
+          "외부 전송 시도 자동 차단",
+          "Docker 읽기 전용 파일시스템",
+          "데이터 분류 등급별 제어",
+        ],
+        large: false,
+        iconKey: "shield",
+      },
+      {
+        title: "LLM 페일오버",
+        description: "Claude + Gemini 자동 장애 전환",
+        bullets: [
+          "Claude Opus 4.6 + Gemini 3 Flash",
+          "서킷 브레이커 자동 전환",
+          "멀티 키 로테이션",
+          "99.9% 가용성 보장",
+        ],
+        large: false,
+        iconKey: "credential",
       },
       {
         title: "SSRF 가드",
@@ -205,18 +278,18 @@ const content: PageContent = {
     ],
   },
   skillsShowcase: {
-    heading: "2,200개 이상의 스킬, 자동으로",
+    heading: "2,243개의 스킬, 자동으로",
     subheading:
-      "Klawn은 2,200개 이상의 스킬을 자동으로 활용하여 문제를 해결하고, 기존 스킬로 해결할 수 없는 문제는 새로운 스킬을 자동 생성하여 즉시 대응합니다.",
+      "Klawn은 2,243개의 스킬을 자동으로 활용하여 문제를 해결하고, 기존 스킬로 해결할 수 없는 문제는 새로운 스킬을 자동 생성하여 즉시 대응합니다.",
     description:
-      "사전 구축된 2,200개 이상의 스킬이 ERP 연동, 문서 처리, 데이터 분석, 커뮤니케이션 등 다양한 업무를 즉시 수행합니다. 에이전트가 상황에 맞는 최적의 스킬을 자동 선택합니다.",
+      "사전 구축된 2,243개의 스킬이 ERP 연동, 문서 처리, 데이터 분석, 커뮤니케이션 등 다양한 업무를 즉시 수행합니다. 에이전트가 상황에 맞는 최적의 스킬을 자동 선택합니다.",
     autoGenDescription:
       "기존 스킬로 해결할 수 없는 새로운 문제를 만나면, Klawn이 실시간으로 새로운 스킬을 자동 생성하여 즉시 대응합니다. 한 번 생성된 스킬은 재사용되어 점점 더 강력해집니다.",
   },
   security: {
     heading: "보안이 기본입니다",
     subheading:
-      "모든 입력은 비신뢰로 취급됩니다. PII 마스킹, 접근 제어, 규정 준수가 아키텍처에 내장되어 있습니다.",
+      "모든 입력은 비신뢰로 취급됩니다. PII 마스킹, 인젝션 탐지, 데이터 유출 방지, 접근 제어, 규정 준수가 아키텍처에 내장되어 있습니다.",
   },
   howItWorks: {
     heading: "시작 방법",
@@ -253,22 +326,51 @@ const content: PageContent = {
         right: "AI 기본법 워터마킹 + PIPA",
       },
       {
+        feature: "OpenAI 호환 API",
+        left: "-",
+        right: "/v1/chat/completions · /v1/models · /v1/responses",
+      },
+      {
+        feature: "파일 I/O",
+        left: "-",
+        right: "Excel, PDF, HWP, PPTX 파싱 및 생성",
+      },
+      {
+        feature: "워크플로우",
+        left: "-",
+        right: "승인 게이트 + 스케줄러 + 단계별 실행",
+      },
+      {
+        feature: "LLM 페일오버",
+        left: "-",
+        right: "Claude + Gemini 자동 전환 · 서킷 브레이커",
+      },
+      {
+        feature: "커넥터",
+        left: "-",
+        right: "더존 ERP + 위하고 + Google Workspace",
+      },
+      {
         feature: "배포",
         left: "npm install -g",
-        right: "Docker / K8s / AWS CDK",
+        right: "Docker / K8s / AWS CDK / 온프레미스",
       },
-      { feature: "ERP", left: "-", right: "더존 + 위하고 커넥터" },
       {
         feature: "관리",
         left: "CLI",
-        right: "어드민 대시보드 + CLI",
+        right: "15개 화면 어드민 대시보드 + CLI",
+      },
+      {
+        feature: "테스트",
+        left: "-",
+        right: "2,079 테스트 · E2E · 카오스 · 부하 테스트",
       },
     ],
   },
   pricing: {
     badge: "투명한 가격",
     heading: "AI 직원, 최저임금 절반으로 채용하세요",
-    subheading: "최저임금의 절반 비용. 사람보다 저렴하고, 사람보다 빠릅니다.",
+    subheading: "최저임금의 절반 비용. 사람보다 저렴하고, 사람보다 빠릅니다. 모델별 토큰 종량제(Opus/Sonnet/Haiku/Flash) 적용.",
     monthlyWage: "₩1,078,440",
     monthlyWageNumber: "월급",
     setupNote: "설치비 포함",

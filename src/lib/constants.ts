@@ -56,23 +56,24 @@ export const FEATURES = [
     large: false,
   },
   {
-    title: "ERP 연동",
-    description: "더존 ERP와 위하고 그룹웨어 직접 연결",
+    title: "ERP · 그룹웨어 · Google Workspace",
+    description: "더존 ERP, 위하고, Google Workspace 직접 연결",
     bullets: [
       "송장 조회 및 전표 생성",
       "결재 목록 및 업무 관리",
+      "Google Drive 업/다운로드 + Gmail 발송",
       "웹훅 기반 실시간 연동",
     ],
     large: false,
   },
   {
     title: "관리 대시보드",
-    description: "통합 어드민 대시보드",
+    description: "15개 관리 화면의 통합 어드민 대시보드",
     bullets: [
-      "실시간 세션 및 사용자 관리",
-      "빌링 및 토큰 사용량 추적",
-      "감사 로그 및 무결성 검증",
-      "보안 감사 결과 확인",
+      "세션 · 사용자 · 스킬 · 워크스페이스 관리",
+      "빌링 · 토큰 · 라이선스 추적",
+      "감사 로그 · 보안 · 컴플라이언스",
+      "SSO · 자격 증명 · 워크플로우 설정",
     ],
     large: true,
   },
@@ -105,19 +106,44 @@ export const COMPARISON_ROWS = [
     klawn: "AI 기본법 워터마킹 + PIPA",
   },
   {
-    feature: "배포",
-    openclaw: "npm install -g",
-    klawn: "Docker / K8s / AWS CDK",
+    feature: "OpenAI 호환 API",
+    openclaw: "-",
+    klawn: "/v1/chat/completions · /v1/models · /v1/responses",
   },
   {
-    feature: "ERP",
+    feature: "파일 I/O",
     openclaw: "-",
-    klawn: "더존 + 위하고 커넥터",
+    klawn: "Excel, PDF, HWP, PPTX 파싱 및 생성",
+  },
+  {
+    feature: "워크플로우",
+    openclaw: "-",
+    klawn: "승인 게이트 + 스케줄러 + 단계별 실행",
+  },
+  {
+    feature: "LLM 페일오버",
+    openclaw: "-",
+    klawn: "Claude + Gemini 자동 전환 · 서킷 브레이커",
+  },
+  {
+    feature: "커넥터",
+    openclaw: "-",
+    klawn: "더존 ERP + 위하고 + Google Workspace",
+  },
+  {
+    feature: "배포",
+    openclaw: "npm install -g",
+    klawn: "Docker / K8s / AWS CDK / 온프레미스",
   },
   {
     feature: "관리",
     openclaw: "CLI",
-    klawn: "어드민 대시보드 + CLI",
+    klawn: "15개 화면 어드민 대시보드 + CLI",
+  },
+  {
+    feature: "테스트",
+    openclaw: "-",
+    klawn: "2,079 테스트 · E2E · 카오스 · 부하 테스트",
   },
 ];
 

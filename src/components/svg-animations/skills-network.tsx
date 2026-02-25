@@ -280,10 +280,7 @@ export function SkillsNetwork(props: React.SVGProps<SVGSVGElement>) {
 
 			{/* Counter section */}
 			<text x="200" y="270" className="sn_counter">
-				2,200
-			</text>
-			<text x="224" y="270" className="sn_plus">
-				+
+				2,243
 			</text>
 			<text x="200" y="290" className="sn_label">
 				자동 활용 스킬
