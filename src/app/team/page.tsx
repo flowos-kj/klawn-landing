@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
 import { CorporateLogos } from "@/components/sections/corporate-logos";
+import { IndustryShowcase } from "@/components/sections/industry-showcase";
 import { TrustBar } from "@/components/sections/trust-bar";
 import { Features } from "@/components/sections/features";
 import { PlatformVisual } from "@/components/sections/platform-visual";
@@ -21,6 +22,7 @@ export default function TeamPage() {
       <main>
         <Hero content={content.hero} />
         <CorporateLogos />
+        <IndustryShowcase />
         <TrustBar items={content.trustItems} />
         <Features content={content.features} />
         <PlatformVisual />
