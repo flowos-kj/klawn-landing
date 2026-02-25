@@ -296,7 +296,7 @@ export function IndustryShowcase() {
             산업별 활용 사례
           </span>
           <h2 className="mt-4 mb-3 text-2xl font-bold text-navy-dark sm:text-3xl">
-            우리 부서에 맞는 AI 활용법
+            우리 부서에 맞는 Klawn 활용법
           </h2>
           <p className="mx-auto max-w-lg text-sm text-muted sm:text-base">
             산업과 부서별로 Klawn이 실제 업무에 어떻게 적용되는지 확인하세요
