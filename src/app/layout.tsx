@@ -105,6 +105,18 @@ export const metadata: Metadata = {
     },
   },
 
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512x512.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+
   category: "technology",
 
   other: {
@@ -122,9 +134,6 @@ export default function RootLayout({
     <html lang="ko" className={`${notoSansKr.variable} ${geistMono.variable}`}>
       <head>
         <JsonLd />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <link rel="author" type="text/plain" href="/humans.txt" />
         <Script id="meta-pixel" strategy="afterInteractive">
