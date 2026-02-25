@@ -5,7 +5,7 @@ const organizationSchema = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: "FlowOS Co., Ltd.",
-  alternateName: "(주)플로우오에스",
+  alternateName: "주식회사 플로우오에스",
   url: "https://flowos.work",
   logo: {
     "@type": "ImageObject",
@@ -17,7 +17,7 @@ const organizationSchema = {
   foundingDate: "2025",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "강남대로53길 8, 6층",
+    streetAddress: "강남대로53길 8, 6-210호 (서초동, 스타크 강남빌딩)",
     addressLocality: "서초구",
     addressRegion: "서울",
     postalCode: "06621",
@@ -25,7 +25,8 @@ const organizationSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    email: "anton@flowos.work",
+    email: "official@flowos.work",
+    telephone: "+82-70-7727-1223",
     contactType: "sales",
     availableLanguage: ["Korean", "English"],
   },
@@ -44,7 +45,7 @@ const softwareSchema = {
   applicationSubCategory: "AI Agent Platform",
   operatingSystem: "Linux, macOS, Windows (Docker)",
   description:
-    "기업을 위한 AI 에이전트 플랫폼. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹을 제공합니다.",
+    "기업을 위한 AI 에이전트 플랫폼. 개인정보 자동 보호, 접근 제어, 감사 추적. 온프레미스 배포로 데이터가 외부로 나가지 않습니다.",
   url: SITE_URL,
   installUrl: "https://www.npmjs.com/package/create-klawn",
   downloadUrl: "https://www.npmjs.com/package/create-klawn",
@@ -74,7 +75,7 @@ const softwareSchema = {
     "더존 ERP / 위하고 그룹웨어 연동",
     "Slack / JANDI / Webhook 채널 지원",
     "Docker / Kubernetes / AWS CDK 배포",
-    "React 관리 대시보드 10페이지",
+    "통합 관리 대시보드",
   ],
   screenshot: `${SITE_URL}/opengraph-image`,
   inLanguage: "ko",
@@ -113,7 +114,7 @@ const webPageSchema = {
   url: SITE_URL,
   name: "Klawn - 기업을 위한 AI 에이전트 플랫폼",
   description:
-    "보안 경계 안에서 자유롭게 동작하는 엔터프라이즈 AI 에이전트. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹.",
+    "24시간 일하는 AI 직원. 더존 ERP, 위하고 연동. 온프레미스 배포로 데이터가 외부로 나가지 않습니다. 개인정보 자동 보호, 접근 제어, 감사 추적 기본 제공.",
   isPartOf: {
     "@id": `${SITE_URL}/#website`,
   },
@@ -122,7 +123,7 @@ const webPageSchema = {
   },
   inLanguage: "ko-KR",
   datePublished: "2025-01-01",
-  dateModified: "2026-02-21",
+  dateModified: "2026-02-25",
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [

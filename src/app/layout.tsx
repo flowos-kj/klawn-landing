@@ -8,7 +8,7 @@ const SITE_URL = "https://klawn.ai.kr";
 const SITE_NAME = "Klawn";
 const TITLE = "Klawn - 기업을 위한 AI 에이전트 플랫폼";
 const DESCRIPTION =
-  "보안 경계 안에서 자유롭게 동작하는 엔터프라이즈 AI 에이전트. PIPA 준수, AI 기본법 대응, 6단계 RBAC, 불변 감사 추적, 한국어 PII 실시간 마스킹. Docker, Kubernetes, AWS CDK 배포 지원. 한 줄이면 시작됩니다.";
+  "24시간 일하는 AI 직원. 더존 ERP, 위하고 연동. 온프레미스 배포로 데이터가 외부로 나가지 않습니다. 개인정보 자동 보호, 접근 제어, 감사 추적 기본 제공. 첫 달 무료.";
 const KEYWORDS = [
   "Klawn",
   "클라운",
@@ -134,7 +134,6 @@ export default function RootLayout({
     <html lang="ko" className={`${notoSansKr.variable} ${geistMono.variable}`}>
       <head>
         <JsonLd />
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <link rel="author" type="text/plain" href="/humans.txt" />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`

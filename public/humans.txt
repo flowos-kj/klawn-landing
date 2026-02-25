@@ -1,34 +1,14 @@
 /* TEAM */
 
-Company: FlowOS Co., Ltd. ((주)플로우오에스)
+Company: FlowOS Co., Ltd. (주식회사 플로우오에스)
 CEO: 안희창 (Heechang Ahn)
-Contact: anton@flowos.work
-Location: 서울 서초구 강남대로53길 8, 6층
+Contact: official@flowos.work
+Phone: 070-7727-1223
+Location: 서울특별시 서초구 강남대로53길 8, 6-210호 (서초동, 스타크 강남빌딩)
 Website: https://flowos.work
 
 /* PRODUCT */
 
 Name: Klawn
 Description: 기업을 위한 AI 에이전트 플랫폼
-Repository: https://github.com/flowos-kj/klawn
-Install: npx create-klawn
-
-/* TECHNOLOGY */
-
-Framework: Next.js 16
-Language: TypeScript
-Styling: Tailwind CSS v4
-UI: Aceternity UI
-Icons: Phosphor Icons
-Font: Noto Sans KR, Geist Mono
-Hosting: Vercel
-AI Engine: Claude Opus 4.6
-Backend: Node.js, Docker, Kubernetes, AWS CDK
-Database: DynamoDB, S3
-
-/* STANDARDS */
-
-HTML: HTML5
-CSS: CSS3 (Tailwind v4)
-Accessibility: WCAG 2.1 AA
-SEO: JSON-LD, Open Graph, Twitter Cards
+URL: https://klawn.ai.kr
