@@ -19,14 +19,22 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-muted sm:text-sm">
               <li>
                 <a
-                  href="mailto:anton@flowos.work"
+                  href="mailto:official@flowos.work"
                   className="transition-colors hover:text-copper"
                 >
-                  anton@flowos.work
+                  official@flowos.work
                 </a>
               </li>
               <li>
-                서울 서초구 강남대로53길 8, 6층
+                <a
+                  href="tel:070-7727-1223"
+                  className="transition-colors hover:text-copper"
+                >
+                  070-7727-1223
+                </a>
+              </li>
+              <li>
+                서울특별시 서초구 강남대로53길 8, 6-210호 (서초동, 스타크 강남빌딩)
               </li>
             </ul>
           </div>
@@ -34,7 +42,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-border pt-6 text-center text-[10px] text-muted sm:mt-10 sm:text-xs">
           <p>
-            <strong className="text-navy">(주)플로우오에스</strong> | 대표 안희창
+            <strong className="text-navy">주식회사 플로우오에스 (FlowOS Co., Ltd.)</strong> | 대표: 안희창 | 사업자등록번호: 505-81-88117
           </p>
           <p className="mt-1">
             &copy; {new Date().getFullYear()} FlowOS Co., Ltd. All rights

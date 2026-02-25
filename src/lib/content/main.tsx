@@ -84,7 +84,7 @@ const content: PageContent = {
       },
       {
         title: "관리 대시보드",
-        description: "React 18 기반 10페이지 어드민 패널",
+        description: "통합 어드민 대시보드",
         bullets: [
           "실시간 세션 및 사용자 관리",
           "빌링 및 토큰 사용량 추적",
@@ -192,9 +192,9 @@ const content: PageContent = {
       },
       {
         title: "세션 관리",
-        description: "JSONL 기반 세션 저장·복원·검색",
+        description: "세션 저장·복원·검색",
         bullets: [
-          "전체 대화 이력 JSONL 저장",
+          "전체 대화 이력 저장",
           "중단 지점 체크포인팅 복원",
           "세션 내 한국어 검색",
           "크로스 세션 컨텍스트 유지",
@@ -261,7 +261,7 @@ const content: PageContent = {
       {
         feature: "관리",
         left: "CLI",
-        right: "어드민 대시보드 (10페이지) + CLI",
+        right: "어드민 대시보드 + CLI",
       },
     ],
   },

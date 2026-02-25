@@ -67,7 +67,7 @@ export const FEATURES = [
   },
   {
     title: "관리 대시보드",
-    description: "React 18 기반 10페이지 어드민 패널",
+    description: "통합 어드민 대시보드",
     bullets: [
       "실시간 세션 및 사용자 관리",
       "빌링 및 토큰 사용량 추적",
@@ -117,7 +117,7 @@ export const COMPARISON_ROWS = [
   {
     feature: "관리",
     openclaw: "CLI",
-    klawn: "어드민 대시보드 (10페이지) + CLI",
+    klawn: "어드민 대시보드 + CLI",
   },
 ];
 
