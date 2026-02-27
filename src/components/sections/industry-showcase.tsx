@@ -36,11 +36,11 @@ const INDUSTRIES: {
   label: string;
   icon: React.ReactNode;
 }[] = [
-  { key: "construction", label: "건설", icon: <Buildings weight="duotone" className="h-4 w-4" /> },
-  { key: "finance", label: "금융", icon: <Bank weight="duotone" className="h-4 w-4" /> },
-  { key: "healthcare", label: "헬스케어", icon: <Heartbeat weight="duotone" className="h-4 w-4" /> },
-  { key: "manufacturing", label: "제조", icon: <Factory weight="duotone" className="h-4 w-4" /> },
-  { key: "retail", label: "리테일", icon: <Storefront weight="duotone" className="h-4 w-4" /> },
+  { key: "construction", label: "건설·토목", icon: <Buildings weight="duotone" className="h-4 w-4" /> },
+  { key: "finance", label: "금융·보험", icon: <Bank weight="duotone" className="h-4 w-4" /> },
+  { key: "healthcare", label: "제약·바이오", icon: <Heartbeat weight="duotone" className="h-4 w-4" /> },
+  { key: "manufacturing", label: "제조·부품", icon: <Factory weight="duotone" className="h-4 w-4" /> },
+  { key: "retail", label: "유통·리테일", icon: <Storefront weight="duotone" className="h-4 w-4" /> },
 ];
 
 const USE_CASES: UseCase[] = [
