@@ -51,9 +51,33 @@ const softwareSchema = {
   downloadUrl: "https://www.npmjs.com/package/create-klawn",
   softwareVersion: "1.0.0",
   offers: {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
     priceCurrency: "KRW",
-    description: "라이선스 및 가격은 FlowOS에 문의",
+    lowPrice: "0",
+    highPrice: "1080000",
+    offerCount: 3,
+    offers: [
+      {
+        "@type": "Offer",
+        name: "무료 체험",
+        price: "0",
+        priceCurrency: "KRW",
+        description: "첫 달 무료 체험",
+      },
+      {
+        "@type": "Offer",
+        name: "AI 직원",
+        price: "1080000",
+        priceCurrency: "KRW",
+        description: "월 108만원 — 24시간 AI 직원 1명",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "1080000",
+          priceCurrency: "KRW",
+          billingDuration: "P1M",
+        },
+      },
+    ],
   },
   author: {
     "@type": "Organization",
@@ -90,7 +114,7 @@ const websiteSchema = {
   alternateName: "클라운",
   url: SITE_URL,
   description:
-    "기업을 위한 AI 에이전트 플랫폼. 보안 경계 안에서 자유롭게 동작합니다.",
+    "Klawn은 기업 전용 AI 에이전트 플랫폼입니다. Claude Opus 4.6 기반 에이전트 루프, 한국어 PII 12종 실시간 마스킹, 6단계 RBAC 접근 제어, 불변 감사 추적을 제공합니다.",
   inLanguage: "ko-KR",
   publisher: {
     "@type": "Organization",
@@ -114,7 +138,7 @@ const webPageSchema = {
   url: SITE_URL,
   name: "Klawn - 기업을 위한 AI 에이전트 플랫폼",
   description:
-    "24시간 일하는 AI 직원. 더존 ERP, 위하고 연동. 온프레미스 배포로 데이터가 외부로 나가지 않습니다. 개인정보 자동 보호, 접근 제어, 감사 추적 기본 제공.",
+    "Klawn은 기업 전용 AI 에이전트 플랫폼입니다. Claude Opus 4.6 기반 에이전트 루프, 한국어 PII 12종 실시간 마스킹, 6단계 RBAC 접근 제어, 불변 감사 추적을 제공합니다. 온프레미스 배포로 데이터가 외부로 나가지 않습니다.",
   isPartOf: {
     "@id": `${SITE_URL}/#website`,
   },
@@ -123,7 +147,7 @@ const webPageSchema = {
   },
   inLanguage: "ko-KR",
   datePublished: "2025-01-01",
-  dateModified: "2026-02-25",
+  dateModified: "2026-02-27",
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -135,6 +159,36 @@ const webPageSchema = {
       },
     ],
   },
+};
+
+const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${SITE_URL}/#navigation`,
+  name: "사이트 내비게이션",
+  itemListElement: [
+    {
+      "@type": "SiteNavigationElement",
+      position: 1,
+      name: "AI 에이전트",
+      description: "Claude Opus 4.6 기반 AI 에이전트. PII 마스킹, RBAC, 감사 추적.",
+      url: SITE_URL,
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 2,
+      name: "Klawn vs ChatGPT",
+      description: "ChatGPT가 못하는 것을 Klawn이 합니다. 엔터프라이즈 보안 비교.",
+      url: `${SITE_URL}/agent`,
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 3,
+      name: "AI 직원 채용",
+      description: "월 108만원으로 24시간 일하는 AI 직원. 모든 부서 배치 가능.",
+      url: `${SITE_URL}/team`,
+    },
+  ],
 };
 
 const faqSchema = {
@@ -240,6 +294,12 @@ export function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(siteNavigationSchema),
         }}
       />
     </>

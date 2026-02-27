@@ -8,7 +8,7 @@ const SITE_URL = "https://klawn.ai.kr";
 const SITE_NAME = "Klawn";
 const TITLE = "Klawn - 기업을 위한 AI 에이전트 플랫폼";
 const DESCRIPTION =
-  "24시간 일하는 AI 직원. 더존 ERP, 위하고 연동. 온프레미스 배포로 데이터가 외부로 나가지 않습니다. 개인정보 자동 보호, 접근 제어, 감사 추적 기본 제공. 첫 달 무료.";
+  "Klawn은 기업 전용 AI 에이전트 플랫폼입니다. Claude Opus 4.6 기반 에이전트 루프, 한국어 PII 12종 실시간 마스킹, 6단계 RBAC 접근 제어, 불변 감사 추적을 제공합니다. 온프레미스 배포로 데이터가 외부로 나가지 않습니다. 더존 ERP·위하고 연동. 첫 달 무료.";
 const KEYWORDS = [
   "Klawn",
   "클라운",
@@ -105,14 +105,16 @@ export const metadata: Metadata = {
     },
   },
 
+  manifest: "/site.webmanifest",
+
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon-512x512.png", sizes: "512x512", type: "image/png" },
-      { url: "/favicon.ico", sizes: "32x32" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
@@ -120,6 +122,8 @@ export const metadata: Metadata = {
   category: "technology",
 
   other: {
+    "theme-color": "#1E2249",
+    "msapplication-TileColor": "#1E2249",
     "naver-site-verification": "",
     "google-site-verification": "google7692ca65f33b22fb",
   },
