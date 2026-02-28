@@ -30,7 +30,7 @@ export function Deployment({ content }: { content: DeploymentContent }) {
           {content.subheading}
         </p>
 
-        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className={`grid gap-4 sm:gap-6 md:grid-cols-2 ${content.options.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {content.options.map((opt) => (
             <div
               key={opt.title}
