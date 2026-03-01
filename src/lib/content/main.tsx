@@ -12,7 +12,7 @@ const content: PageContent = {
       </>
     ),
     ctaLabel: "도입 문의하기",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
   trustItems: [
     { label: "PIPA 준수", key: "pipa" },
@@ -389,7 +389,7 @@ const content: PageContent = {
     referralLabel: "소개-계약 시 혜택",
     referralDetail: "첫 달 무료 추가 제공",
     ctaLabel: "도입 문의하기",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
   deployment: {
     heading: "배포 옵션",
@@ -429,8 +429,8 @@ const content: PageContent = {
   cta: {
     heading: "OpenClaw만큼 쉽게, 엔터프라이즈에 맞게",
     subheading: "익숙한 설치 경험에 보안, 규정 준수, 관리 기능을 더했습니다.",
-    ctaLabel: "anton@flowos.work",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaLabel: "official@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
 };
 

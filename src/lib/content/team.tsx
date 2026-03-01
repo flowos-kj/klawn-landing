@@ -12,7 +12,7 @@ const content: PageContent = {
       </>
     ),
     ctaLabel: "채용 문의하기",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
   trustItems: [
     { label: "24시간 근무", key: "always-on" },
@@ -204,7 +204,7 @@ const content: PageContent = {
     referralLabel: "소개-계약 시 혜택",
     referralDetail: "첫 달 무료 추가 제공",
     ctaLabel: "채용 문의하기",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
   deployment: {
     heading: "도입 방식",
@@ -238,8 +238,8 @@ const content: PageContent = {
     heading: "지금 Klawn을 채용하세요",
     subheading:
       "첫 달 무료. 24시간 안에 팀에 합류합니다.",
-    ctaLabel: "anton@flowos.work",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaLabel: "official@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
 };
 

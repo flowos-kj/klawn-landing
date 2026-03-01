@@ -12,7 +12,7 @@ const content: PageContent = {
       </>
     ),
     ctaLabel: "PoC 문의하기",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
   trustItems: [
     { label: "PIPA 준수", key: "pipa" },
@@ -188,7 +188,7 @@ const content: PageContent = {
     referralLabel: "소개-계약 시 혜택",
     referralDetail: "첫 달 무료 추가 제공",
     ctaLabel: "PoC 문의하기",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
   deployment: {
     heading: "배포 옵션",
@@ -229,8 +229,8 @@ const content: PageContent = {
     heading: "ChatGPT 대신, Klawn으로 시작하세요",
     subheading:
       "PoC부터 프로덕션까지. 첫 달 무료로 바로 시작할 수 있습니다.",
-    ctaLabel: "anton@flowos.work",
-    ctaHref: "mailto:anton@flowos.work",
+    ctaLabel: "official@flowos.work",
+    ctaHref: "https://form.typeform.com/to/U8tmLjCw",
   },
 };
 

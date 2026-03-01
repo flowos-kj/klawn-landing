@@ -1,0 +1,12 @@
+Klawn - 기업을 위한 AI 에이전트 플랫폼
+klawn.ai.kr
+https://klawn.ai.kr
+핵심 기능 ; AI 에이전트. Claude Opus 4.6 기반 에이전트 루프. 도구 실행 및 스킬 자동화 ; 한국어 PII 보호. 12가지 한국형 개인정보 실시간 마스킹. 주민등록번호, 전화 ...
+최저임금으로 AI 직원 채용 - Klawn
+klawn.ai.kr
+https://klawn.ai.kr › team
+4대보험 없이, 퇴근 없이. 월 216만원으로 24시간 일하는 AI 직원을 채용하세요. 재무, 마케팅, 영업, 운영, 고객서비스, HR 모든 부서에서 일합니다.
+Klawn vs ChatGPT - 엔터프라이즈 AI 에이전트
+klawn.ai.kr
+https://klawn.ai.kr › agent
+ChatGPT가 못하는 것을 Klawn이 합니다. 온프레미스 배포, PII 마스킹, 6단계 RBAC, 불변 감사 추적 — 엔터프라이즈에 필요한 보안은 ChatGPT에 없습니다.
